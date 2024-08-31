@@ -1,0 +1,72 @@
+# AndeStar V5 user mode CSRs
+block/CSR:
+  description: User Mode CSRs
+  items:
+    - name: uitb
+      address: 0x800
+      description: Instruction table base address for CoDense extension.
+      fieldset: UITB
+    - name: ucode
+      address: 0x801
+      description: Contains overflow flag for DSP extension.
+      fieldset: UCODE
+    - name: udcause
+      address: 0x809
+      description: User detailed trap cause
+    - name: ucctlbeginaddr
+      address: 0x80B
+      description: CCTL begin address
+    - name: ucctlcommand
+      address: 0x80C
+      description: CCTL command
+    - name: wfe
+      address: 0x810
+      description: Wait for event control
+      fieldset: WFE
+    - name: sleepvalue
+      address: 0x811
+      description: Sleep value
+      fieldset: SLEEPVALUE
+    - name: txevt
+      address: 0x812
+      description: Transmit event
+      fieldset: TXEVT
+fieldset/UITB:
+  description: Instruction Table Base Address Register
+  fields:
+    - name: HW
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: ADDR
+      description:
+      bit_offset: 2
+      bit_size: 30
+fieldset/UCODE:
+  description: Code Register - Stores the overflow flag of the DSP extension
+  fields:
+    - name: OV
+      description: Overflow flag
+      bit_offset: 0
+      bit_size: 1
+fieldset/WFE:
+  description: Wait for Event Control Register
+  fields:
+    - name: WFE
+      description: Wait for event
+      bit_offset: 0
+      bit_size: 1
+fieldset/SLEEPVALUE:
+  description: Sleep Value Register
+  fields:
+    - name: SV
+      description: Sleep value
+      bit_offset: 0
+      bit_size: 1
+fieldset/TXEVT:
+  description: Transmit Event Register
+  fields:
+    - name: EVTo
+      description: Event output
+      bit_offset: 0
+      bit_size: 1

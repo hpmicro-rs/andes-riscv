@@ -1,5 +1,7 @@
 # andes-riscv
 
+The RISC-V architectur support crate for Andes' RISC-V cores.
+
 SCOUNTEREN (0x106)
 MILMB (0x7C0)
 MDLMB (0x7C1)
