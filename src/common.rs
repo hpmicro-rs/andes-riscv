@@ -54,7 +54,7 @@ impl<T: Copy, C: CSR, A: Read> Reg<T, C, A> {
 }
 impl<T: Copy, C: CSR, A: Write> Reg<T, C, A> {
     #[inline(always)]
-    pub fn write_value(&self, val: T) {
+    pub unsafe fn write_value(&self, val: T) {
         let mut new_val: u32 = 0;
         unsafe {
             (&mut new_val as *mut u32 as *mut T).write_volatile(val);
@@ -64,7 +64,7 @@ impl<T: Copy, C: CSR, A: Write> Reg<T, C, A> {
 }
 impl<T: Default + Copy, C: CSR, A: Write> Reg<T, C, A> {
     #[inline(always)]
-    pub fn write<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
+    pub unsafe fn write<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
         let mut val = Default::default();
         let res = f(&mut val);
         self.write_value(val);
@@ -73,7 +73,7 @@ impl<T: Default + Copy, C: CSR, A: Write> Reg<T, C, A> {
 }
 impl<T: Copy, C: CSR, A: Read + Write> Reg<T, C, A> {
     #[inline(always)]
-    pub fn modify<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
+    pub unsafe fn modify<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
         let mut val = self.read();
         let res = f(&mut val);
         self.write_value(val);
