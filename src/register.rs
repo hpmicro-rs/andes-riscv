@@ -20,7 +20,7 @@ impl crate::common::SealedCSR for CSR_MILMB {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MILMB {}
@@ -41,7 +41,7 @@ impl crate::common::SealedCSR for CSR_MDLMB {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MDLMB {}
@@ -62,7 +62,7 @@ impl crate::common::SealedCSR for CSR_MECC_CODE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c2, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c2, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MECC_CODE {}
@@ -83,7 +83,7 @@ impl crate::common::SealedCSR for CSR_MNVEC {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MNVEC {}
@@ -104,7 +104,7 @@ impl crate::common::SealedCSR for CSR_MXSTATUS {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MXSTATUS {}
@@ -125,7 +125,7 @@ impl crate::common::SealedCSR for CSR_MPFT_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c5, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c5, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MPFT_CTL {}
@@ -146,7 +146,7 @@ impl crate::common::SealedCSR for CSR_MHSP_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c6, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c6, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MHSP_CTL {}
@@ -167,7 +167,7 @@ impl crate::common::SealedCSR for CSR_MSP_BOUND {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c7, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c7, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSP_BOUND {}
@@ -188,7 +188,7 @@ impl crate::common::SealedCSR for CSR_MSP_BASE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c8, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c8, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSP_BASE {}
@@ -209,7 +209,7 @@ impl crate::common::SealedCSR for CSR_MDCAUSE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7c9, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7c9, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MDCAUSE {}
@@ -231,7 +231,7 @@ impl crate::common::SealedCSR for CSR_MCACHE_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ca, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ca, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCACHE_CTL {}
@@ -252,7 +252,7 @@ impl crate::common::SealedCSR for CSR_MCCTLBEGINADDR {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7cb, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7cb, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCCTLBEGINADDR {}
@@ -273,7 +273,7 @@ impl crate::common::SealedCSR for CSR_MCCTLCOMMAND {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7cc, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7cc, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCCTLCOMMAND {}
@@ -294,7 +294,7 @@ impl crate::common::SealedCSR for CSR_MCCTLDATA {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7cd, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7cd, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCCTLDATA {}
@@ -316,7 +316,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTERWEN {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ce, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ce, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTERWEN {}
@@ -338,7 +338,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTERINTEN {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7cf, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7cf, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTERINTEN {}
@@ -359,7 +359,7 @@ impl crate::common::SealedCSR for CSR_MMISC_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MMISC_CTL {}
@@ -381,7 +381,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_M {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTERMASK_M {}
@@ -403,7 +403,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_S {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d2, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d2, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTERMASK_S {}
@@ -425,7 +425,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_U {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTERMASK_U {}
@@ -447,7 +447,7 @@ impl crate::common::SealedCSR for CSR_MCOUNTEROVF {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCOUNTEROVF {}
@@ -468,7 +468,7 @@ impl crate::common::SealedCSR for CSR_MSLIDELEG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d5, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d5, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSLIDELEG {}
@@ -490,7 +490,7 @@ impl crate::common::SealedCSR for CSR_MSAVESTATUS {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d6, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d6, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVESTATUS {}
@@ -511,7 +511,7 @@ impl crate::common::SealedCSR for CSR_MSAVEEPC1 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d7, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d7, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVEEPC1 {}
@@ -532,7 +532,7 @@ impl crate::common::SealedCSR for CSR_MSAVECAUSE1 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d8, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d8, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVECAUSE1 {}
@@ -553,7 +553,7 @@ impl crate::common::SealedCSR for CSR_MSAVEEPC2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7d9, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7d9, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVEEPC2 {}
@@ -574,7 +574,7 @@ impl crate::common::SealedCSR for CSR_MSAVECAUSE2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7da, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7da, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVECAUSE2 {}
@@ -595,7 +595,7 @@ impl crate::common::SealedCSR for CSR_MSAVEDCAUSE1 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7db, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7db, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVEDCAUSE1 {}
@@ -616,7 +616,7 @@ impl crate::common::SealedCSR for CSR_MSAVEDCAUSE2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7dc, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7dc, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSAVEDCAUSE2 {}
@@ -637,7 +637,7 @@ impl crate::common::SealedCSR for CSR_MCLK_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7df, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7df, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCLK_CTL {}
@@ -658,7 +658,7 @@ impl crate::common::SealedCSR for CSR_DEXC2DBG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7e0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7e0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_DEXC2DBG {}
@@ -679,7 +679,7 @@ impl crate::common::SealedCSR for CSR_DDCAUSE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7e1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7e1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_DDCAUSE {}
@@ -700,7 +700,7 @@ impl crate::common::SealedCSR for CSR_PUSHMXSTATUS {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7eb, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7eb, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PUSHMXSTATUS {}
@@ -722,7 +722,7 @@ impl crate::common::SealedCSR for CSR_MIRQ_ENTRY {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ec, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ec, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MIRQ_ENTRY {}
@@ -743,7 +743,7 @@ impl crate::common::SealedCSR for CSR_MINTSEL_JAL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ed, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ed, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MINTSEL_JAL {}
@@ -764,7 +764,7 @@ impl crate::common::SealedCSR for CSR_PUSHMCAUSE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ee, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ee, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PUSHMCAUSE {}
@@ -785,7 +785,7 @@ impl crate::common::SealedCSR for CSR_PUSHMEPC {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7ef, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7ef, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PUSHMEPC {}
@@ -806,7 +806,7 @@ impl crate::common::SealedCSR for CSR_MPPIB {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7f0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7f0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MPPIB {}
@@ -827,7 +827,7 @@ impl crate::common::SealedCSR for CSR_MFIOB {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x7f1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x7f1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MFIOB {}
@@ -848,7 +848,7 @@ impl crate::common::SealedCSR for CSR_UITB {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x800, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x800, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_UITB {}
@@ -869,7 +869,7 @@ impl crate::common::SealedCSR for CSR_UCODE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x801, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x801, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_UCODE {}
@@ -890,7 +890,7 @@ impl crate::common::SealedCSR for CSR_UDCAUSE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x809, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x809, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_UDCAUSE {}
@@ -911,7 +911,7 @@ impl crate::common::SealedCSR for CSR_UCCTLBEGINADDR {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x80b, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x80b, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_UCCTLBEGINADDR {}
@@ -932,7 +932,7 @@ impl crate::common::SealedCSR for CSR_UCCTLCOMMAND {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x80c, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x80c, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_UCCTLCOMMAND {}
@@ -953,7 +953,7 @@ impl crate::common::SealedCSR for CSR_WFE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x810, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x810, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_WFE {}
@@ -975,7 +975,7 @@ impl crate::common::SealedCSR for CSR_SLEEPVALUE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x811, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x811, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SLEEPVALUE {}
@@ -996,7 +996,7 @@ impl crate::common::SealedCSR for CSR_TXEVT {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x812, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x812, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_TXEVT {}
@@ -1017,7 +1017,7 @@ impl crate::common::SealedCSR for CSR_SLIE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9c4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9c4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SLIE {}
@@ -1038,7 +1038,7 @@ impl crate::common::SealedCSR for CSR_SLIP {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9c5, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9c5, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SLIP {}
@@ -1059,7 +1059,7 @@ impl crate::common::SealedCSR for CSR_SDCAUSE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9c9, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9c9, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SDCAUSE {}
@@ -1080,7 +1080,7 @@ impl crate::common::SealedCSR for CSR_SCCTLDATA {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9cd, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9cd, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCCTLDATA {}
@@ -1102,7 +1102,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTERINTEN {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9cf, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9cf, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTERINTEN {}
@@ -1123,7 +1123,7 @@ impl crate::common::SealedCSR for CSR_SMISC_CTL {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9d0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9d0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SMISC_CTL {}
@@ -1145,7 +1145,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_M {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9d1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9d1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTERMASK_M {}
@@ -1167,7 +1167,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_S {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9d2, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9d2, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTERMASK_S {}
@@ -1189,7 +1189,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_U {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9d3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9d3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTERMASK_U {}
@@ -1211,7 +1211,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTEROVF {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9d4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9d4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTEROVF {}
@@ -1233,7 +1233,7 @@ impl crate::common::SealedCSR for CSR_SCOUNTINHIBIT {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9e0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9e0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SCOUNTINHIBIT {}
@@ -1254,7 +1254,7 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT3 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9e3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9e3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SHPMEVENT3 {}
@@ -1275,7 +1275,7 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT4 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9e4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9e4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SHPMEVENT4 {}
@@ -1296,7 +1296,7 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT5 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9e5, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9e5, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SHPMEVENT5 {}
@@ -1317,7 +1317,7 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT6 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0x9e6, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0x9e6, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_SHPMEVENT6 {}
@@ -1338,7 +1338,7 @@ impl crate::common::SealedCSR for CSR_PMACFG0 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbc0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMACFG0 {}
@@ -1359,7 +1359,7 @@ impl crate::common::SealedCSR for CSR_PMACFG1 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbc0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMACFG1 {}
@@ -1380,7 +1380,7 @@ impl crate::common::SealedCSR for CSR_PMACFG2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbc0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMACFG2 {}
@@ -1401,7 +1401,7 @@ impl crate::common::SealedCSR for CSR_PMACFG3 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbc0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMACFG3 {}
@@ -1422,7 +1422,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR0 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR0 {}
@@ -1443,7 +1443,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR1 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR1 {}
@@ -1464,7 +1464,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd2, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd2, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR2 {}
@@ -1485,7 +1485,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR3 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR3 {}
@@ -1506,7 +1506,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR4 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd4, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd4, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR4 {}
@@ -1527,7 +1527,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR5 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd5, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd5, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR5 {}
@@ -1548,7 +1548,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR6 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd6, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd6, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR6 {}
@@ -1569,7 +1569,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR7 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd7, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd7, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR7 {}
@@ -1590,7 +1590,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR8 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd8, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd8, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR8 {}
@@ -1611,7 +1611,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR9 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbd9, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbd9, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR9 {}
@@ -1632,7 +1632,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR10 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbda, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbda, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR10 {}
@@ -1653,7 +1653,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR11 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbdb, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbdb, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR11 {}
@@ -1674,7 +1674,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR12 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbdc, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbdc, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR12 {}
@@ -1695,7 +1695,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR13 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbdd, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbdd, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR13 {}
@@ -1716,7 +1716,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR14 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbde, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbde, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR14 {}
@@ -1737,7 +1737,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR15 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xbdf, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xbdf, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_PMAADDR15 {}
@@ -1758,7 +1758,7 @@ impl crate::common::SealedCSR for CSR_MICM_CFG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc0, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc0, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MICM_CFG {}
@@ -1779,7 +1779,7 @@ impl crate::common::SealedCSR for CSR_MDCM_CFG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc1, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc1, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MDCM_CFG {}
@@ -1800,7 +1800,7 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc2, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc2, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MMSC_CFG {}
@@ -1821,7 +1821,7 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG2 {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc3, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc3, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MMSC_CFG2 {}
@@ -1842,7 +1842,7 @@ impl crate::common::SealedCSR for CSR_MVEC_CFG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc7, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc7, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MVEC_CFG {}
@@ -1864,7 +1864,7 @@ impl crate::common::SealedCSR for CSR_MCRASH_STATESAVE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc8, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc8, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCRASH_STATESAVE {}
@@ -1886,7 +1886,7 @@ impl crate::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfc9, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfc9, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MSTATUS_CRASHSAVE {}
@@ -1908,7 +1908,7 @@ impl crate::common::SealedCSR for CSR_MRVARCH_CFG {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfca, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfca, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MRVARCH_CFG {}
@@ -1929,7 +1929,7 @@ impl crate::common::SealedCSR for CSR_MCCACHE_CTL_BASE {
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("cswrs 0xfcf, {0}, x0" , in (reg) value);
+        core :: arch :: asm ! ("csrrw x0, 0xfcf, {0}" , in (reg) value);
     }
 }
 impl crate::common::CSR for CSR_MCCACHE_CTL_BASE {}
