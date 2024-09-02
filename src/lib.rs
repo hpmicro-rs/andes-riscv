@@ -9,3 +9,5 @@ pub mod register;
 pub mod common;
 
 pub mod l1c;
+
+pub use riscv;

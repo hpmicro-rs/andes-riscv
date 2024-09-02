@@ -6,6 +6,10 @@ This crate has machine-generated code from YAML definitions.
 
 This crate is a supplement to the `riscv` crate, which provides the core RISC-V support.
 
+## TODOs
+
+- [ ] 64-bit platform support
+
 ## CSRs
 
 ### AndeStar V5 machine mode CSRs
