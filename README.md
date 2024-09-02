@@ -8,6 +8,8 @@ This crate is a supplement to the `riscv` crate, which provides the core RISC-V 
 
 ## TODOs
 
+- [x] 32-bit CSRs
+- [ ] L1C operations
 - [ ] 64-bit platform support
 
 ## CSRs
