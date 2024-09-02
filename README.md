@@ -2,6 +2,10 @@
 
 The RISC-V architecture support crate for Andes' RISC-V cores.
 
+This crate has machine-generated code from YAML definitions.
+
+This crate is a supplement to the `riscv` crate, which provides the core RISC-V support.
+
 ## CSRs
 
 ### AndeStar V5 machine mode CSRs

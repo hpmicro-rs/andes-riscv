@@ -1,0 +1,266 @@
+fieldset/MMSC_CFG:
+  description: Misc. Configuration Register
+  fields:
+    - name: ECC
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: TLB_ECC
+      description:
+      bit_offset: 1
+      bit_size: 2
+    - name: ECD
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: PFT
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: HSP
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: ACE
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: ADDPMC
+      description:
+      bit_offset: 7
+      bit_size: 5
+    - name: VPLIC
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: EV5PE
+      description:
+      bit_offset: 13
+      bit_size: 1
+    - name: LMSLVP
+      description:
+      bit_offset: 14
+      bit_size: 1
+    - name: PMNDS
+      description:
+      bit_offset: 15
+      bit_size: 1
+    - name: CCTLCSR
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: EFHW
+      description:
+      bit_offset: 17
+      bit_size: 1
+    - name: VCCTL
+      description:
+      bit_offset: 18
+      bit_size: 2
+    - name: EXCSLVL
+      description:
+      bit_offset: 20
+      bit_size: 2
+    - name: NOPMC
+      description:
+      bit_offset: 22
+      bit_size: 1
+    - name: SPE_AFT
+      description:
+      bit_offset: 23
+      bit_size: 1
+    - name: ESLEEP
+      description:
+      bit_offset: 24
+      bit_size: 1
+    - name: PPI
+      description:
+      bit_offset: 25
+      bit_size: 1
+    - name: FIO
+      description:
+      bit_offset: 26
+      bit_size: 1
+    - name: CLIC
+      description:
+      bit_offset: 27
+      bit_size: 1
+    - name: ECLIC
+      description:
+      bit_offset: 28
+      bit_size: 1
+    - name: EDSP
+      description:
+      bit_offset: 29
+      bit_size: 1
+    - name: PPMA
+      description:
+      bit_offset: 30
+      bit_size: 1
+    - name: BF16CVT
+      description:
+      bit_offset: 32
+      bit_size: 1
+    - name: ZFH
+      description:
+      bit_offset: 33
+      bit_size: 1
+    - name: VL4
+      description:
+      bit_offset: 34
+      bit_size: 1
+    - name: CRASHSAVE
+      description:
+      bit_offset: 35
+      bit_size: 1
+    - name: VECCFG
+      description:
+      bit_offset: 36
+      bit_size: 1
+    - name: FINV
+      description:
+      bit_offset: 37
+      bit_size: 1
+    - name: PP16
+      description:
+      bit_offset: 38
+      bit_size: 1
+    - name: VSIH
+      description:
+      bit_offset: 40
+      bit_size: 1
+    - name: ECDV
+      description:
+      bit_offset: 41
+      bit_size: 2
+    - name: VDOT
+      description:
+      bit_offset: 43
+      bit_size: 1
+    - name: VPFH
+      description:
+      bit_offset: 44
+      bit_size: 1
+    - name: CCACHEMP_CFG
+      description:
+      bit_offset: 45
+      bit_size: 1
+    - name: CCACHE
+      description:
+      bit_offset: 46
+      bit_size: 1
+    - name: IO_COHP
+      description:
+      bit_offset: 47
+      bit_size: 1
+    - name: CORE_PCLUS
+      description:
+      bit_offset: 48
+      bit_size: 4
+    - name: RVARCH
+      description:
+      bit_offset: 52
+      bit_size: 1
+fieldset/MILMB:
+  description: ILM (Instruction Local Memory) Base Register
+  fields:
+    - name: IEN
+      description: ILM Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: ECCEN
+      description: ECC Enable
+      bit_offset: 1
+      bit_size: 2
+    - name: RWECC
+      description: Read/Write ECC
+      bit_offset: 3
+      bit_size: 1
+    - name: Reserved
+      description: Reserved
+      bit_offset: 4
+      bit_size: 6
+    - name: IBPA
+      description: Base Physical Address (IBPA)
+      bit_offset: 10
+      bit_size: 54 # 64 - 10
+fieldset/MDLMB:
+  description: DLM (Data Local Memory) Base Register
+  fields:
+    - name: DEN
+      description: DLM Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: ECCEN
+      description: ECC Enable
+      bit_offset: 1
+      bit_size: 2
+    - name: RWECC
+      description: Read/Write ECC
+      bit_offset: 3
+      bit_size: 1
+    - name: Reserved
+      description: Reserved
+      bit_offset: 4
+      bit_size: 6
+    - name: DBPA
+      description: Base Physical Address (DBPA)
+      bit_offset: 10
+      bit_size: 54 #
+fieldset/MECC_CODE:
+  description: ECC Code Register
+  fields:
+    - name: Code
+      description: ECC Code
+      bit_offset: 0
+      bit_size: 8 # 8 for RV64
+    - name: C
+      description: Correctable Error Flag
+      bit_offset: 16
+      bit_size: 1
+    - name: P
+      description: Parity Error Flag
+      bit_offset: 17
+      bit_size: 1
+    - name: RAMID
+      description: RAM Identifier
+      bit_offset: 18
+      bit_size: 4
+    - name: INSN
+      description: Instruction Error Flag
+      bit_offset: 22
+      bit_size: 1
+    - name: SYNDR
+      description: Syndrome
+      bit_offset: 23
+      bit_size: 1
+fieldset/MPPIB:
+  description: PPI (Private Peripheral Interface) Base Register
+  fields:
+    - name: EN
+      description: Private Peripheral Interface enable bit
+      bit_offset: 0
+      bit_size: 1
+    - name: SIZE
+      description: Indicates the power-of-2 size of the PPI region
+      bit_offset: 1
+      bit_size: 5
+    - name: BPA
+      description: Base Physical Address
+      bit_offset: 10
+      bit_size: 54
+fieldset/MFIOB:
+  description: FIO (Fast IO Interface) Base Register
+  fields:
+    - name: EN
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: SIZE
+      description:
+      bit_offset: 1
+      bit_size: 5
+    - name: BPA
+      description: Base Physical Address
+      bit_offset: 10
+      bit_size: 54
