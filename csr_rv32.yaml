@@ -1,0 +1,1393 @@
+block/CSR:
+  description: Machine Mode CSRs and Debug Mode CSRs
+  items:
+    # - MARK: machine mode
+    - name: micm_cfg
+      byte_offset: 0xFC0
+      description: Instruction cache/memory configuration
+      fieldset: MICM_CFG
+    - name: mdcm_cfg
+      byte_offset: 0xFC1
+      description: Data cache/memory configuration
+      fieldset: MDCM_CFG
+    - name: mmsc_cfg
+      byte_offset: 0xFC2
+      description: Miscellaneous configuration
+      fieldset: MMSC_CFG
+    - name: mmsc_cfg2
+      byte_offset: 0xFC3
+      description: Miscellaneous configuration (RV32)
+      fieldset: MMSC_CFG2
+    - name: mvec_cfg
+      byte_offset: 0xFC7
+      description: Vector processor configuration
+      fieldset: MVEC_CFG
+    - name: mccache_ctl_base
+      byte_offset: 0xFCF
+      description: Cluster cache control base address
+    - name: mrvarch_cfg
+      byte_offset: 0xFCA
+      description: RISC-V Architecture
+      fieldset: MRVARCH_CFG
+    # Crash Debug CSRs
+    - name: mcrash_statesave
+      byte_offset: 0xFC8
+      description: Current state save for crash debugging
+      fieldset: MCRASH_STATESAVE
+    - name: mstatus_crashsave
+      byte_offset: 0xFC9
+      description: mstatus state save for crash debugging
+    # Memory CSRs
+    - name: milmb
+      byte_offset: 0x7C0
+      description: Instruction local memory base address.
+      fieldset: MILMB
+    - name: mdlmb
+      byte_offset: 0x7C1
+      description: Data local memory base address.
+      fieldset: MDLMB
+    - name: mecc_code
+      byte_offset: 0x7C2
+      description: ECC code.
+      fieldset: MECC_CODE
+    - name: mnvec
+      byte_offset: 0x7C3
+      description: NMI-handler base address.
+    - name: mcache_ctl
+      byte_offset: 0x7CA
+      description: Cache control
+      fieldset: MCACHE_CTL
+    - name: mcctlbeginaddr
+      byte_offset: 0x7CB
+      description: CCTL begin address
+    - name: mcctlcommand
+      byte_offset: 0x7CC
+      description: CCTL command
+    - name: mcctldata
+      byte_offset: 0x7CD
+      description: CCTL data
+    - name: mppib
+      byte_offset: 0x7F0
+      description: Private peripheral interface base address
+      fieldset: MPPIB
+    - name: mfiob
+      byte_offset: 0x7F1
+      description: Fast IO interface base address
+      fieldset: MFIOB
+    # Hardware Stack Protection & Recording
+    - name: mhsp_ctl
+      byte_offset: 0x7C6
+      description: Hardware stack protection control
+      fieldset: MHSP_CTL
+    - name: msp_bound
+      byte_offset: 0x7C7
+      description: SP bound register
+    - name: msp_base
+      byte_offset: 0x7C8
+      description: SP base register
+    # Trap related CSR
+    - name: mxstatus
+      byte_offset: 0x7C4
+      description: Additional machine mode status
+      fieldset: MXSTATUS
+    - name: mdcause
+      byte_offset: 0x7C9
+      description: Detailed exception cause
+      fieldset: MDCAUSE
+    - name: mslideleg
+      byte_offset: 0x7D5
+      description: Supervisor local interrupt delegation
+      fieldset: MSLIDELEG
+    - name: msavestatus
+      byte_offset: 0x7D6
+      description: Status save register (level 1 & level 2)
+      fieldset: MSAVESTATUS
+    - name: msaveepc1
+      byte_offset: 0x7D7
+      description: EPC save register (level 1)
+    - name: msavecause1
+      byte_offset: 0x7D8
+      description: Exception cause save register (level 1)
+    - name: msaveepc2
+      byte_offset: 0x7D9
+      description: EPC save register (level 2)
+    - name: msavecause2
+      byte_offset: 0x7DA
+      description: Exception cause save register (level 2)
+    - name: msavedcause1
+      byte_offset: 0x7DB
+      description: Detailed exception cause save (level 1)
+    - name: msavedcause2
+      byte_offset: 0x7DC
+      description: Detailed exception cause save (level 2)
+    # Control CSRs
+    - name: mpft_ctl
+      byte_offset: 0x7C5
+      description: Performance throttling control
+      fieldset: MPFT_CTL
+    - name: mmisc_ctl
+      byte_offset: 0x7D0
+      description: Miscellaneous control
+      fieldset: MMISC_CTL
+    - name: mclk_ctl
+      byte_offset: 0x7DF
+      description: Clock control
+    # Counter related CSRs
+    - name: mcounterwen
+      byte_offset: 0x7CE
+      description: Counter write enable
+      fieldset: MCOUNTER_COMMON
+    - name: mcounterinten
+      byte_offset: 0x7CF
+      description: Counter overflow interrupt enable
+      fieldset: MCOUNTER_COMMON
+    - name: mcountermask_m
+      byte_offset: 0x7D1
+      description: Counter not counting in M-mode
+      fieldset: MCOUNTER_COMMON
+    - name: mcountermask_s
+      byte_offset: 0x7D2
+      description: Counter not counting in S-mode
+      fieldset: MCOUNTER_COMMON
+    - name: mcountermask_u
+      byte_offset: 0x7D3
+      description: Counter not counting in U-mode
+      fieldset: MCOUNTER_COMMON
+    - name: mcounterovf
+      byte_offset: 0x7D4
+      description: Counter overflow status
+      fieldset: MCOUNTER_COMMON
+    # Enhanced CLIC CSRs
+    - name: mirq_entry
+      byte_offset: 0x7EC
+      description: Interrupt common entry point
+      fieldset: MIRQ_ENTRY
+    - name: mintsel_jal
+      byte_offset: 0x7ED
+      description: Select interrupt and call ISR
+    - name: pushmcause
+      byte_offset: 0x7EE
+      description: Store mcause to stack
+    - name: pushmepc
+      byte_offset: 0x7EF
+      description: Store mepc to stack
+    - name: pushmxstatus
+      byte_offset: 0x7EB
+      description: Store mxstatus to stack
+    # Physical Memory Attribute CSRs
+    - name: pmacfg0
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    - name: pmacfg1
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    - name: pmacfg2
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    - name: pmacfg3
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    # pmaaddr0 to pmaaddr15
+    - name: pmaaddr0
+      byte_offset: 0xBD0
+      description: PMA address
+    - name: pmaaddr1
+      byte_offset: 0xBD1
+      description: PMA address
+    - name: pmaaddr2
+      byte_offset: 0xBD2
+      description: PMA address
+    - name: pmaaddr3
+      byte_offset: 0xBD3
+      description: PMA address
+    - name: pmaaddr4
+      byte_offset: 0xBD4
+      description: PMA address
+    - name: pmaaddr5
+      byte_offset: 0xBD5
+      description: PMA address
+    - name: pmaaddr6
+      byte_offset: 0xBD6
+      description: PMA address
+    - name: pmaaddr7
+      byte_offset: 0xBD7
+      description: PMA address
+    - name: pmaaddr8
+      byte_offset: 0xBD8
+      description: PMA address
+    - name: pmaaddr9
+      byte_offset: 0xBD9
+      description: PMA address
+    - name: pmaaddr10
+      byte_offset: 0xBDA
+      description: PMA address
+    - name: pmaaddr11
+      byte_offset: 0xBDB
+      description: PMA address
+    - name: pmaaddr12
+      byte_offset: 0xBDC
+      description: PMA address
+    - name: pmaaddr13
+      byte_offset: 0xBDD
+      description: PMA address
+    - name: pmaaddr14
+      byte_offset: 0xBDE
+      description: PMA address
+    - name: pmaaddr15
+      byte_offset: 0xBDF
+      description: PMA address
+    # - MARK: debug mode
+    - name: dexc2dbg
+      byte_offset: 0x7E0
+      description: Enable exception to enter Halt Mode.
+      fieldset: DEXC2DBG
+    - name: ddcause
+      byte_offset: 0x7E1
+      description: Detailed exception type information when an exception enters Halt Mode.
+      fieldset: DDCAUSE
+    # - MARK: supervisor mode
+    # Supervisor Trap Handling
+    - name: slie
+      byte_offset: 0x9C4
+      description: Supervisor local interrupt enable
+      fieldset: SLIE
+    - name: slip
+      byte_offset: 0x9C5
+      description: Supervisor local interrupt pending
+      fieldset: SLIP
+    - name: sdcause
+      byte_offset: 0x9C9
+      description: Detailed exception cause
+      fieldset: SDCAUSE
+    # Supervisor Counter Related
+    - name: scounterinten
+      byte_offset: 0x9CF
+      description: Counter overflow interrupt enable
+      fieldset: SCOUNTER_COMMON
+    - name: scountermask_m
+      byte_offset: 0x9D1
+      description: Counter mask for M-mode
+      fieldset: SCOUNTER_COMMON
+    - name: scountermask_s
+      byte_offset: 0x9D2
+      description: Counter mask for S-mode
+      fieldset: SCOUNTER_COMMON
+    - name: scountermask_u
+      byte_offset: 0x9D3
+      description: Counter mask for U-mode
+      fieldset: SCOUNTER_COMMON
+    - name: scounterovf
+      byte_offset: 0x9D4
+      description: Counter overflow status
+      fieldset: SCOUNTER_COMMON
+    - name: scountinhibit
+      byte_offset: 0x9E0
+      description: Supervisor counter inhibit
+      fieldset: SCOUNTER_COMMON
+    # shpmevent3~6
+    - name: shpmevent3
+      byte_offset: 0x9E3
+      description: Performance monitoring event selection
+    - name: shpmevent4
+      byte_offset: 0x9E4
+      description: Performance monitoring event selection
+    - name: shpmevent5
+      byte_offset: 0x9E5
+      description: Performance monitoring event selection
+    - name: shpmevent6
+      byte_offset: 0x9E6
+      description: Performance monitoring event selection
+    # Supervisor Control
+    - name: scctldata
+      byte_offset: 0x9CD
+      description: CCTL data
+    - name: smisc_ctl
+      byte_offset: 0x9D0
+      description: Miscellaneous control
+      fieldset: SMISC_CTL
+    # - MARK: user mode
+    # AndeStar V5 user mode CSRs
+    - name: uitb
+      byte_offset: 0x800
+      description: Instruction table base address for CoDense extension.
+      fieldset: UITB
+    - name: ucode
+      byte_offset: 0x801
+      description: Contains overflow flag for DSP extension.
+      fieldset: UCODE
+    - name: udcause
+      byte_offset: 0x809
+      description: User detailed trap cause
+    - name: ucctlbeginaddr
+      byte_offset: 0x80B
+      description: CCTL begin address
+    - name: ucctlcommand
+      byte_offset: 0x80C
+      description: CCTL command
+    - name: wfe
+      byte_offset: 0x810
+      description: Wait for event control
+      fieldset: WFE
+    - name: sleepvalue
+      byte_offset: 0x811
+      description: Sleep value
+      fieldset: SLEEPVALUE
+    - name: txevt
+      byte_offset: 0x812
+      description: Transmit event
+      fieldset: TXEVT
+# - MARK: fieldsets
+fieldset/MICM_CFG:
+  description: Instruction Cache/Memory Configuration Register
+  fields:
+    - name: ISET
+      description:
+      bit_offset: 0
+      bit_size: 3
+    - name: IWAY
+      description:
+      bit_offset: 3
+      bit_size: 3
+    - name: ISZ
+      description:
+      bit_offset: 6
+      bit_size: 3
+    - name: ILCK
+      description:
+      bit_offset: 9
+      bit_size: 1
+    - name: IC_ECC
+      description:
+      bit_offset: 10
+      bit_size: 2
+    - name: ILMB
+      description:
+      bit_offset: 12
+      bit_size: 3
+    - name: ILMSZ
+      description:
+      bit_offset: 15
+      bit_size: 5
+    - name: ULM_2BANK
+      description:
+      bit_offset: 20
+      bit_size: 1
+    - name: ILM_ECC
+      description:
+      bit_offset: 21
+      bit_size: 2
+    - name: ILM_XONLY
+      description:
+      bit_offset: 23
+      bit_size: 1
+    - name: SETH
+      description:
+      bit_offset: 24
+      bit_size: 1
+    - name: IC_REPL
+      description:
+      bit_offset: 25
+      bit_size: 2
+fieldset/MDCM_CFG:
+  description: Data Cache/Memory Configuration Register
+  fields:
+    - name: DSET
+      description:
+      bit_offset: 0
+      bit_size: 3
+    - name: DWAY
+      description:
+      bit_offset: 3
+      bit_size: 3
+    - name: DSZ
+      description:
+      bit_offset: 6
+      bit_size: 3
+    - name: DLCK
+      description:
+      bit_offset: 9
+      bit_size: 1
+    - name: DC_ECC
+      description:
+      bit_offset: 10
+      bit_size: 2
+    - name: DLMB
+      description:
+      bit_offset: 12
+      bit_size: 3
+    - name: DLMSZ
+      description:
+      bit_offset: 15
+      bit_size: 5
+    - name: ULM_2BANK
+      description:
+      bit_offset: 20
+      bit_size: 1
+    - name: DLM_ECC
+      description:
+      bit_offset: 21
+      bit_size: 2
+    - name: SETH
+      description:
+      bit_offset: 24
+      bit_size: 1
+    - name: DC_REPL
+      description:
+      bit_offset: 25
+      bit_size: 2
+fieldset/MMSC_CFG:
+  description: Misc. Configuration Register
+  fields:
+    - name: ECC
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: TLB_ECC
+      description:
+      bit_offset: 1
+      bit_size: 2
+    - name: ECD
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: PFT
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: HSP
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: ACE
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: ADDPMC
+      description:
+      bit_offset: 7
+      bit_size: 5
+    - name: VPLIC
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: EV5PE
+      description:
+      bit_offset: 13
+      bit_size: 1
+    - name: LMSLVP
+      description:
+      bit_offset: 14
+      bit_size: 1
+    - name: PMNDS
+      description:
+      bit_offset: 15
+      bit_size: 1
+    - name: CCTLCSR
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: EFHW
+      description:
+      bit_offset: 17
+      bit_size: 1
+    - name: VCCTL
+      description:
+      bit_offset: 18
+      bit_size: 2
+    - name: EXCSLVL
+      description:
+      bit_offset: 20
+      bit_size: 2
+    - name: NOPMC
+      description:
+      bit_offset: 22
+      bit_size: 1
+    - name: SPE_AFT
+      description:
+      bit_offset: 23
+      bit_size: 1
+    - name: ESLEEP
+      description:
+      bit_offset: 24
+      bit_size: 1
+    - name: PPI
+      description:
+      bit_offset: 25
+      bit_size: 1
+    - name: FIO
+      description:
+      bit_offset: 26
+      bit_size: 1
+    - name: CLIC
+      description:
+      bit_offset: 27
+      bit_size: 1
+    - name: ECLIC
+      description:
+      bit_offset: 28
+      bit_size: 1
+    - name: EDSP
+      description:
+      bit_offset: 29
+      bit_size: 1
+    - name: PPMA
+      description:
+      bit_offset: 30
+      bit_size: 1
+    - name: MSC_EXT
+      description:
+      bit_offset: 31
+      bit_size: 1
+fieldset/MMSC_CFG2:
+  description: Misc. Configuration 2 Register
+  fields:
+    - name: BF16CVT
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: ZFH
+      description:
+      bit_offset: 1
+      bit_size: 1
+    - name: VL4
+      description:
+      bit_offset: 2
+      bit_size: 1
+    - name: CRASHSAVE
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: VECCFG
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: FINV
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: PP16
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: VSIH
+      description:
+      bit_offset: 8
+      bit_size: 1
+    - name: ECDV
+      description:
+      bit_offset: 9
+      bit_size: 2
+    - name: VDOT
+      description:
+      bit_offset: 11
+      bit_size: 1
+    - name: VPFH
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: CCACHEMP_CFG
+      description:
+      bit_offset: 13
+      bit_size: 1
+    - name: CCACHE
+      description:
+      bit_offset: 14
+      bit_size: 1
+    - name: IO_COHP
+      description:
+      bit_offset: 15
+      bit_size: 1
+    - name: CORE_PCLUS
+      description:
+      bit_offset: 16
+      bit_size: 4
+    - name: RVARCH
+      description:
+      bit_offset: 20
+      bit_size: 1
+fieldset/MCRASH_STATESAVE:
+  description: Machine Crash State Save
+  fields:
+    - name: MIE
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: CP
+      description:
+      bit_offset: 1
+      bit_size: 2
+    - name: PPFT_EN
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: PIME
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: PDME
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: PTYP
+      description:
+      bit_offset: 6
+      bit_size: 2
+fieldset/MVEC_CFG:
+  description: Vector Configuration Register
+  fields:
+    - name: MINOR
+      description:
+      bit_offset: 0
+      bit_size: 4
+    - name: MAJOR
+      description:
+      bit_offset: 4
+      bit_size: 4
+    - name: DW
+      description:
+      bit_offset: 8
+      bit_size: 3
+    - name: MW
+      description:
+      bit_offset: 11
+      bit_size: 3
+    - name: MISEW
+      description:
+      bit_offset: 14
+      bit_size: 2
+    - name: MFSEW
+      description:
+      bit_offset: 16
+      bit_size: 2
+fieldset/MRVARCH_CFG:
+  description: RISC-V Architecture Configuration Register
+  fields:
+    - name: Zba
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: Zbb
+      description:
+      bit_offset: 1
+      bit_size: 1
+    - name: Zbc
+      description:
+      bit_offset: 2
+      bit_size: 1
+    - name: Zbs
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: Smepmp
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: Svinval
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: Smstateen
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: Sscofmpf
+      description:
+      bit_offset: 7
+      bit_size: 1
+    - name: Sstc
+      description:
+      bit_offset: 8
+      bit_size: 1
+    - name: Zicbom
+      description:
+      bit_offset: 9
+      bit_size: 1
+    - name: Zicbop
+      description:
+      bit_offset: 10
+      bit_size: 1
+    - name: Zicboz
+      description:
+      bit_offset: 11
+      bit_size: 1
+    - name: Zbk
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: Zkn
+      description:
+      bit_offset: 13
+      bit_size: 1
+    - name: Zks
+      description:
+      bit_offset: 14
+      bit_size: 1
+    - name: Zkt
+      description:
+      bit_offset: 15
+      bit_size: 1
+    - name: Zkr
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: SM_VERION
+      description:
+      bit_offset: 17
+      bit_size: 3
+    - name: SS_VERSION
+      description:
+      bit_offset: 20
+      bit_size: 3
+    - name: Svpbmt
+      description:
+      bit_offset: 23
+      bit_size: 1
+    - name: Svnapot
+      description:
+      bit_offset: 24
+      bit_size: 1
+    - name: Zihintpause
+      description:
+      bit_offset: 25
+      bit_size: 1
+fieldset/MILMB:
+  description: ILM (Instruction Local Memory) Base Register
+  fields:
+    - name: IEN
+      description: ILM Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: ECCEN
+      description: ECC Enable
+      bit_offset: 1
+      bit_size: 2
+    - name: RWECC
+      description: Read/Write ECC
+      bit_offset: 3
+      bit_size: 1
+    - name: IBPA
+      description: Base Physical Address (IBPA)
+      bit_offset: 10
+      bit_size: 22 # NOTE: 32-bit
+fieldset/MDLMB:
+  description: DLM (Data Local Memory) Base Register
+  fields:
+    - name: DEN
+      description: DLM Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: ECCEN
+      description: ECC Enable
+      bit_offset: 1
+      bit_size: 2
+    - name: RWECC
+      description: Read/Write ECC
+      bit_offset: 3
+      bit_size: 1
+    - name: Reserved
+      description: Reserved
+      bit_offset: 4
+      bit_size: 6
+    - name: DBPA
+      description: Base Physical Address (DBPA)
+      bit_offset: 10
+      bit_size: 22 # NOTE: 32-bit
+fieldset/MECC_CODE:
+  description: ECC Code Register
+  fields:
+    - name: Code
+      description: ECC Code
+      bit_offset: 0
+      bit_size: 7 # 8 for RV64
+    - name: C
+      description: Correctable Error Flag
+      bit_offset: 16
+      bit_size: 1
+    - name: P
+      description: Parity Error Flag
+      bit_offset: 17
+      bit_size: 1
+    - name: RAMID
+      description: RAM Identifier
+      bit_offset: 18
+      bit_size: 4
+    - name: INSN
+      description: Instruction Error Flag
+      bit_offset: 22
+      bit_size: 1
+    - name: SYNDR
+      description: Syndrome
+      bit_offset: 23
+      bit_size: 1
+fieldset/MPFT_CTL:
+  description: Performance Throttling Control Register
+  fields:
+    - name: T_LEVEL
+      description: Throttling Level
+      bit_offset: 4
+      bit_size: 4
+    - name: FAST_INT
+      description: Fast Interrupt
+      bit_offset: 8
+      bit_size: 1
+fieldset/MCACHE_CTL:
+  description: Cache Control Register
+  fields:
+    - name: IC_EN
+      description: Instruction Cache Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: DC_EN
+      description: Data Cache Enable
+      bit_offset: 1
+      bit_size: 1
+    - name: IC_ECCEN
+      description: Instruction Cache ECC Enable
+      bit_offset: 2
+      bit_size: 2
+    - name: DC_ECCEN
+      description: Data Cache ECC Enable
+      bit_offset: 4
+      bit_size: 2
+    - name: IC_RWECC
+      description: Instruction Cache Read/Write ECC
+      bit_offset: 6
+      bit_size: 1
+    - name: DC_RWECC
+      description: Data Cache Read/Write ECC
+      bit_offset: 7
+      bit_size: 1
+    - name: CCTL_SUEN
+      description: Cache Control SU Enable
+      bit_offset: 8
+      bit_size: 1
+    - name: IPREF_EN
+      description: Instruction Prefetch Enable
+      bit_offset: 9
+      bit_size: 1
+    - name: DPREF_EN
+      description: Data Prefetch Enable
+      bit_offset: 10
+      bit_size: 1
+    - name: IC_1ST_WD
+      description: Instruction Cache 1st Way Disable
+      bit_offset: 11
+      bit_size: 1
+    - name: DC_1ST_WD
+      description: Data Cache 1st Way Disable
+      bit_offset: 12
+      bit_size: 1
+    - name: DC_WARND
+      description: Data Cache Write-Around
+      bit_offset: 13
+      bit_size: 2
+    - name: L2C_WARND
+      description: L2 Cache Write-Around
+      bit_offset: 15
+      bit_size: 2
+    - name: TLB_ECCEN
+      description: TLB ECC Enable
+      bit_offset: 17
+      bit_size: 2
+    - name: DC_COHEN
+      description: Data Cache Coherence Enable
+      bit_offset: 19
+      bit_size: 1
+    - name: DC_COHSTA
+      description: Data Cache Coherence State
+      bit_offset: 20
+      bit_size: 1
+    - name: DPREF_MODE
+      description: Data Prefetch Mode
+      bit_offset: 21
+      bit_size: 2
+fieldset/MMISC_CTL:
+  description: Machine Miscellaneous Control Register
+  fields:
+    - name: ACE
+      description: Andes Custom Extension (ACE) enable
+      bit_offset: 0
+      bit_size: 1
+    - name: VEC_PLIC
+      description: Vectored external PLIC interrupt enable
+      bit_offset: 1
+      bit_size: 1
+    - name: RVCOMPM
+      description: RV compatibility mode enable bit
+      bit_offset: 2
+      bit_size: 1
+    - name: BRPE
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: ACES
+      description:
+      bit_offset: 4
+      bit_size: 2
+    - name: MSA_UNA
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: NBLD_EN
+      description:
+      bit_offset: 8
+      bit_size: 1
+    - name: NEWNMI
+      description:
+      bit_offset: 9
+      bit_size: 1
+    - name: VCGL1_EN
+      description:
+      bit_offset: 10
+      bit_size: 1
+    - name: VCGL2_EN
+      description:
+      bit_offset: 11
+      bit_size: 1
+    - name: VCGL3_EN
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: LDX0NXP
+      description: “Load to x0” exception generation control bit
+      bit_offset: 13
+      bit_size: 1
+fieldset/MPPIB:
+  description: PPI (Private Peripheral Interface) Base Register
+  fields:
+    - name: EN
+      description: Private Peripheral Interface enable bit
+      bit_offset: 0
+      bit_size: 1
+    - name: SIZE
+      description: Indicates the power-of-2 size of the PPI region
+      bit_offset: 1
+      bit_size: 5
+    - name: BPA
+      description: Base Physical Address
+      bit_offset: 10
+      bit_size: 22 # NOTE: 32-bit
+fieldset/MFIOB:
+  description: FIO (Fast IO Interface) Base Register
+  fields:
+    - name: EN
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: SIZE
+      description:
+      bit_offset: 1
+      bit_size: 5
+    - name: BPA
+      description: Base Physical Address
+      bit_offset: 10
+      bit_size: 22 # NOTE: 32-bit
+fieldset/MXSTATUS:
+  description: Machine Extended Status Register
+  fields:
+    - name: PFT_EN
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: PPFT_EN
+      description:
+      bit_offset: 1
+      bit_size: 1
+    - name: IME
+      description:
+      bit_offset: 2
+      bit_size: 1
+    - name: PIME
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: DME
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: PDME
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: TYP
+      description:
+      bit_offset: 6
+      bit_size: 2
+    - name: PTYP
+      description:
+      bit_offset: 8
+      bit_size: 2
+fieldset/MDCAUSE:
+  description: Machine Detailed Trap Cause Register (for imprecise exception/interrupt)
+  fields:
+    - name: mdcause
+      description:
+      bit_offset: 0
+      bit_size: 5
+    - name: PM
+      description:
+      bit_offset: 5
+      bit_size: 2
+fieldset/MSLIDELEG:
+  description: Machine Supervisor Local Interrupt Delegation Register
+  fields:
+    - name: IMECCI
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: BWEI
+      description:
+      bit_offset: 17
+      bit_size: 1
+    - name: PMOVI
+      description:
+      bit_offset: 18
+      bit_size: 1
+    - name: IMECCDMR
+      description:
+      bit_offset: 19
+      bit_size: 1
+    - name: ACEERR
+      description:
+      bit_offset: 24
+      bit_size: 1
+fieldset/MSAVESTATUS:
+  description: Machine Status Save Register
+  fields:
+    - name: MPIE
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: MPP
+      description:
+      bit_offset: 1
+      bit_size: 2
+    - name: PPFT_EN
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: PIME
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: PDME
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: PTYP
+      description:
+      bit_offset: 6
+      bit_size: 2
+fieldset/MHSP_CTL:
+  description: Machine Hardware Stack Protection Control Register
+  fields:
+    - name: OVF_EN
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: UDF_EN
+      description:
+      bit_offset: 1
+      bit_size: 1
+    - name: SCHM
+      description:
+      bit_offset: 2
+      bit_size: 1
+    - name: U
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: S
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: M
+      description:
+      bit_offset: 5
+      bit_size: 1
+fieldset/MIRQ_ENTRY:
+  description: Machine Interrupt Common Entry Address Register
+  fields:
+    - name: EN
+      description: Enable
+      bit_offset: 0
+      bit_size: 1
+    - name: ICEA
+      description: Interrupt Common Entry Address
+      bit_offset: 1
+      bit_size: 31
+fieldset/DEXC2DBG:
+  description: Exception Redirection Register
+  fields:
+    - name: IAM
+      description:
+      bit_offset: 0
+      bit_size: 1
+    - name: IAF
+      description:
+      bit_offset: 1
+      bit_size: 1
+    - name: II
+      description:
+      bit_offset: 2
+      bit_size: 1
+    - name: NMI
+      description:
+      bit_offset: 3
+      bit_size: 1
+    - name: LAM
+      description:
+      bit_offset: 4
+      bit_size: 1
+    - name: LAF
+      description:
+      bit_offset: 5
+      bit_size: 1
+    - name: SAM
+      description:
+      bit_offset: 6
+      bit_size: 1
+    - name: SAF
+      description:
+      bit_offset: 7
+      bit_size: 1
+    - name: UEC
+      description:
+      bit_offset: 8
+      bit_size: 1
+    - name: SEC
+      description:
+      bit_offset: 9
+      bit_size: 1
+    - name: HEC
+      description:
+      bit_offset: 10
+      bit_size: 1
+    - name: MEC
+      description:
+      bit_offset: 11
+      bit_size: 1
+    - name: HSP
+      description:
+      bit_offset: 12
+      bit_size: 1
+    - name: ACE
+      description:
+      bit_offset: 13
+      bit_size: 1
+    - name: SLPECC
+      description:
+      bit_offset: 14
+      bit_size: 1
+    - name: BWE
+      description:
+      bit_offset: 15
+      bit_size: 1
+    - name: IPF
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: LPF
+      description:
+      bit_offset: 17
+      bit_size: 1
+    - name: SPF
+      description:
+      bit_offset: 18
+      bit_size: 1
+    - name: PMOV
+      description:
+      bit_offset: 19
+      bit_size: 1
+fieldset/DDCAUSE:
+  description: Debug Detailed Cause Register
+  fields:
+    - name: MAINTYPE
+      description: Indicates the main types of a Debug Mode entrance. Its definition is listed below.
+      bit_offset: 0
+      bit_size: 8
+    - name: SUBTYPE
+      description: Indicates the subtypes of a main type. Its definition is listed below. A main type may not have a subtype definition.
+      bit_offset: 8
+      bit_size: 8
+fieldset/MCOUNTER_COMMON:
+  description: Machine Counter Fields
+  fields:
+    - name: CY
+      description: Cycle counter
+      bit_offset: 0
+      bit_size: 1
+    - name: IR
+      description: Instruction retired counter
+      bit_offset: 2
+      bit_size: 1
+    - name: HPM
+      description: Hardware performance monitor 3 to 31
+      bit_offset: 3
+      bit_size: 1
+      array:
+        len: 29
+        stride: 1
+        start_index: 3 # TODO, support this
+fieldset/PMACFG:
+  description: PMA Configuration Register 0
+  fields:
+    - name: ETYP
+      description: Event Type
+      bit_offset: 0
+      bit_size: 2
+      array:
+        len: 4
+        stride: 4
+    - name: MTYP
+      description: Memory Type
+      bit_offset: 2
+      bit_size: 4
+      array:
+        len: 4
+        stride: 4
+    - name: NAMO
+      description: Naturally Aligned Memory Operation
+      bit_offset: 6
+      bit_size: 1
+      array:
+        len: 4
+        stride: 4
+fieldset/SLIE:
+  description: Supervisor Local Interrupt Enable
+  fields:
+    - name: IMECCI
+      description: Enable S-mode slave-port ECC error local interrupt
+      bit_offset: 16
+      bit_size: 1
+    - name: BWEI
+      description: Enable S-mode bus read/write transaction error local interrupt
+      bit_offset: 17
+      bit_size: 1
+    - name: PMOVI
+      description: Enable S-mode performance monitor overflow local interrupt
+      bit_offset: 18
+      bit_size: 1
+    - name: IMECCDMR
+      description: Enable S-mode ECC DMR error local interrupt
+      bit_offset: 19
+      bit_size: 1
+    - name: ACEERR
+      description: Enable S-mode ACE error local interrupt
+      bit_offset: 24
+      bit_size: 1
+fieldset/SLIP:
+  description: Supervisor Local Interrupt Pending
+  fields:
+    - name: IMECCI
+      description:
+      bit_offset: 16
+      bit_size: 1
+    - name: BWEI
+      description:
+      bit_offset: 17
+      bit_size: 1
+    - name: PMOVI
+      description:
+      bit_offset: 18
+      bit_size: 1
+    - name: IMECCDMR
+      description:
+      bit_offset: 19
+      bit_size: 1
+    - name: ACEERR
+      description:
+      bit_offset: 24
+      bit_size: 1
+fieldset/SDCAUSE:
+  description: Supervisor Detailed Cause (for imprecise exception/interrupt)
+  fields:
+    - name: sdcause
+      description: Detailed cause for imprecise exception
+      bit_offset: 0
+      bit_size: 5
+    - name: PM
+      description: Privilege Mode
+      bit_offset: 5
+      bit_size: 2
+fieldset/SMISC_CTL:
+  description: Supervisor Miscellaneous Control Register
+  fields:
+    - name: ACES
+      description: ACE (Access Control Extension) Status
+      bit_offset: 4
+      bit_size: 2
+      enum: ACES
+fieldset/SCOUNTER_COMMON:
+  description: Machine Counter Fields
+  fields:
+    - name: CY
+      description: Cycle counter
+      bit_offset: 0
+      bit_size: 1
+    - name: IR
+      description: Instruction retired counter
+      bit_offset: 2
+      bit_size: 1
+    - name: HPM
+      description: Hardware performance monitor 3 to 31
+      bit_offset: 3
+      bit_size: 1
+      array:
+        len: 29
+        stride: 1
+        start_index: 3 # TODO, support this
+enum/ACES:
+  bit_size: 2
+  variants:
+    - name: "Off"
+      value: 0
+    - name: Initial
+      value: 1
+    - name: Clean
+      value: 2
+    - name: Dirty
+      value: 3
+fieldset/UITB:
+  description: Instruction Table Base Address Register
+  fields:
+    - name: HW
+      description: if the Xcodense instruction table is hardwired
+      bit_offset: 0
+      bit_size: 1
+    - name: ADDR
+      description:
+      bit_offset: 2
+      bit_size: 30
+fieldset/UCODE:
+  description: Code Register - Stores the overflow flag of the DSP extension
+  fields:
+    - name: OV
+      description: Overflow flag
+      bit_offset: 0
+      bit_size: 1
+fieldset/WFE:
+  description: Wait for Event Control Register
+  fields:
+    - name: WFE
+      description: Wait for event
+      bit_offset: 0
+      bit_size: 1
+fieldset/SLEEPVALUE:
+  description: Sleep Value Register
+  fields:
+    - name: SV
+      description: Sleep value
+      bit_offset: 0
+      bit_size: 1
+fieldset/TXEVT:
+  description: Transmit Event Register
+  fields:
+    - name: EVTo
+      description: Event output
+      bit_offset: 0
+      bit_size: 1

@@ -3,39 +3,39 @@ block/CSR:
   description: User Mode CSRs
   items:
     - name: uitb
-      address: 0x800
+      byte_offset: 0x800
       description: Instruction table base address for CoDense extension.
       fieldset: UITB
     - name: ucode
-      address: 0x801
+      byte_offset: 0x801
       description: Contains overflow flag for DSP extension.
       fieldset: UCODE
     - name: udcause
-      address: 0x809
+      byte_offset: 0x809
       description: User detailed trap cause
     - name: ucctlbeginaddr
-      address: 0x80B
+      byte_offset: 0x80B
       description: CCTL begin address
     - name: ucctlcommand
-      address: 0x80C
+      byte_offset: 0x80C
       description: CCTL command
     - name: wfe
-      address: 0x810
+      byte_offset: 0x810
       description: Wait for event control
       fieldset: WFE
     - name: sleepvalue
-      address: 0x811
+      byte_offset: 0x811
       description: Sleep value
       fieldset: SLEEPVALUE
     - name: txevt
-      address: 0x812
+      byte_offset: 0x812
       description: Transmit event
       fieldset: TXEVT
 fieldset/UITB:
   description: Instruction Table Base Address Register
   fields:
     - name: HW
-      description:
+      description: if the Xcodense instruction table is hardwired
       bit_offset: 0
       bit_size: 1
     - name: ADDR

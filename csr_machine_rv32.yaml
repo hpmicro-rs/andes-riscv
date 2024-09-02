@@ -4,198 +4,251 @@ block/CSR:
   items:
     # Configuration Registers
     - name: micm_cfg
-      address: 0xFC0
+      byte_offset: 0xFC0
       description: Instruction cache/memory configuration
       fieldset: MICM_CFG
     - name: mdcm_cfg
-      address: 0xFC1
+      byte_offset: 0xFC1
       description: Data cache/memory configuration
       fieldset: MDCM_CFG
     - name: mmsc_cfg
-      address: 0xFC2
+      byte_offset: 0xFC2
       description: Miscellaneous configuration
       fieldset: MMSC_CFG
     - name: mmsc_cfg2
-      address: 0xFC3
+      byte_offset: 0xFC3
       description: Miscellaneous configuration (RV32)
       fieldset: MMSC_CFG2
     - name: mvec_cfg
-      address: 0xFC7
+      byte_offset: 0xFC7
       description: Vector processor configuration
       fieldset: MVEC_CFG
     - name: mccache_ctl_base
-      address: 0xFCF
+      byte_offset: 0xFCF
       description: Cluster cache control base address
     - name: mrvarch_cfg
-      address: 0xFCA
+      byte_offset: 0xFCA
       description: RISC-V Architecture
       fieldset: MRVARCH_CFG
     # Crash Debug CSRs
     - name: mcrash_statesave
-      address: 0xFC8
+      byte_offset: 0xFC8
       description: Current state save for crash debugging
       fieldset: MCRASH_STATESAVE
     - name: mstatus_crashsave
-      address: 0xFC9
+      byte_offset: 0xFC9
       description: mstatus state save for crash debugging
     # Memory CSRs
     - name: milmb
-      address: 0x7C0
+      byte_offset: 0x7C0
       description: Instruction local memory base address.
       fieldset: MILMB
     - name: mdlmb
-      address: 0x7C1
+      byte_offset: 0x7C1
       description: Data local memory base address.
       fieldset: MDLMB
     - name: mecc_code
-      address: 0x7C2
+      byte_offset: 0x7C2
       description: ECC code.
       fieldset: MECC_CODE
     - name: mnvec
-      address: 0x7C3
+      byte_offset: 0x7C3
       description: NMI-handler base address.
     - name: mcache_ctl
-      address: 0x7CA
+      byte_offset: 0x7CA
       description: Cache control
       fieldset: MCACHE_CTL
     - name: mcctlbeginaddr
-      address: 0x7CB
+      byte_offset: 0x7CB
       description: CCTL begin address
     - name: mcctlcommand
-      address: 0x7CC
+      byte_offset: 0x7CC
       description: CCTL command
     - name: mcctldata
-      address: 0x7CD
+      byte_offset: 0x7CD
       description: CCTL data
     - name: mppib
-      address: 0x7F0
+      byte_offset: 0x7F0
       description: Private peripheral interface base address
       fieldset: MPPIB
     - name: mfiob
-      address: 0x7F1
+      byte_offset: 0x7F1
       description: Fast IO interface base address
       fieldset: MFIOB
     # Hardware Stack Protection & Recording
     - name: mhsp_ctl
-      address: 0x7C6
+      byte_offset: 0x7C6
       description: Hardware stack protection control
       fieldset: MHSP_CTL
     - name: msp_bound
-      address: 0x7C7
+      byte_offset: 0x7C7
       description: SP bound register
     - name: msp_base
-      address: 0x7C8
+      byte_offset: 0x7C8
       description: SP base register
     # Trap related CSR
     - name: mxstatus
-      address: 0x7C4
+      byte_offset: 0x7C4
       description: Additional machine mode status
       fieldset: MXSTATUS
     - name: mdcause
-      address: 0x7C9
+      byte_offset: 0x7C9
       description: Detailed exception cause
       fieldset: MDCAUSE
     - name: mslideleg
-      address: 0x7D5
+      byte_offset: 0x7D5
       description: Supervisor local interrupt delegation
       fieldset: MSLIDELEG
     - name: msavestatus
-      address: 0x7D6
+      byte_offset: 0x7D6
       description: Status save register (level 1 & level 2)
       fieldset: MSAVESTATUS
     - name: msaveepc1
-      address: 0x7D7
+      byte_offset: 0x7D7
       description: EPC save register (level 1)
     - name: msavecause1
-      address: 0x7D8
+      byte_offset: 0x7D8
       description: Exception cause save register (level 1)
     - name: msaveepc2
-      address: 0x7D9
+      byte_offset: 0x7D9
       description: EPC save register (level 2)
     - name: msavecause2
-      address: 0x7DA
+      byte_offset: 0x7DA
       description: Exception cause save register (level 2)
     - name: msavedcause1
-      address: 0x7DB
+      byte_offset: 0x7DB
       description: Detailed exception cause save (level 1)
     - name: msavedcause2
-      address: 0x7DC
+      byte_offset: 0x7DC
       description: Detailed exception cause save (level 2)
     # Control CSRs
     - name: mpft_ctl
-      address: 0x7C5
+      byte_offset: 0x7C5
       description: Performance throttling control
       fieldset: MPFT_CTL
     - name: mmisc_ctl
-      address: 0x7D0
+      byte_offset: 0x7D0
       description: Miscellaneous control
       fieldset: MMISC_CTL
     - name: mclk_ctl
-      address: 0x7DF
+      byte_offset: 0x7DF
       description: Clock control
     # Counter related CSRs
     - name: mcounterwen
-      address: 0x7CE
+      byte_offset: 0x7CE
       description: Counter write enable
       fieldset: MCOUNTER_COMMON
     - name: mcounterinten
-      address: 0x7CF
+      byte_offset: 0x7CF
       description: Counter overflow interrupt enable
       fieldset: MCOUNTER_COMMON
     - name: mcountermask_m
-      address: 0x7D1
+      byte_offset: 0x7D1
       description: Counter not counting in M-mode
       fieldset: MCOUNTER_COMMON
     - name: mcountermask_s
-      address: 0x7D2
+      byte_offset: 0x7D2
       description: Counter not counting in S-mode
       fieldset: MCOUNTER_COMMON
     - name: mcountermask_u
-      address: 0x7D3
+      byte_offset: 0x7D3
       description: Counter not counting in U-mode
       fieldset: MCOUNTER_COMMON
     - name: mcounterovf
-      address: 0x7D4
+      byte_offset: 0x7D4
       description: Counter overflow status
       fieldset: MCOUNTER_COMMON
     # Enhanced CLIC CSRs
     - name: mirq_entry
-      address: 0x7EC
+      byte_offset: 0x7EC
       description: Interrupt common entry point
       fieldset: MIRQ_ENTRY
     - name: mintsel_jal
-      address: 0x7ED
+      byte_offset: 0x7ED
       description: Select interrupt and call ISR
     - name: pushmcause
-      address: 0x7EE
+      byte_offset: 0x7EE
       description: Store mcause to stack
     - name: pushmepc
-      address: 0x7EF
+      byte_offset: 0x7EF
       description: Store mepc to stack
     - name: pushmxstatus
-      address: 0x7EB
+      byte_offset: 0x7EB
       description: Store mxstatus to stack
     # Physical Memory Attribute CSRs
-    - name: pmacfg
-      address: 0xBC0
+    - name: pmacfg0
+      byte_offset: 0xBC0
       description: PMA configuration
       fieldset: PMACFG
-      array:
-        size: 16
-        stride: 1
-    - name: pmaaddr
-      address: 0xBD0
+    - name: pmacfg1
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    - name: pmacfg2
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    - name: pmacfg3
+      byte_offset: 0xBC0
+      description: PMA configuration
+      fieldset: PMACFG
+    # pmaaddr0 to pmaaddr15
+    - name: pmaaddr0
+      byte_offset: 0xBD0
       description: PMA address
-      array:
-        size: 16
-        stride: 1
+    - name: pmaaddr1
+      byte_offset: 0xBD1
+      description: PMA address
+    - name: pmaaddr2
+      byte_offset: 0xBD2
+      description: PMA address
+    - name: pmaaddr3
+      byte_offset: 0xBD3
+      description: PMA address
+    - name: pmaaddr4
+      byte_offset: 0xBD4
+      description: PMA address
+    - name: pmaaddr5
+      byte_offset: 0xBD5
+      description: PMA address
+    - name: pmaaddr6
+      byte_offset: 0xBD6
+      description: PMA address
+    - name: pmaaddr7
+      byte_offset: 0xBD7
+      description: PMA address
+    - name: pmaaddr8
+      byte_offset: 0xBD8
+      description: PMA address
+    - name: pmaaddr9
+      byte_offset: 0xBD9
+      description: PMA address
+    - name: pmaaddr10
+      byte_offset: 0xBDA
+      description: PMA address
+    - name: pmaaddr11
+      byte_offset: 0xBDB
+      description: PMA address
+    - name: pmaaddr12
+      byte_offset: 0xBDC
+      description: PMA address
+    - name: pmaaddr13
+      byte_offset: 0xBDD
+      description: PMA address
+    - name: pmaaddr14
+      byte_offset: 0xBDE
+      description: PMA address
+    - name: pmaaddr15
+      byte_offset: 0xBDF
+      description: PMA address
+
     # AndeStar V5 debug mode CSRs
     - name: dexc2dbg
-      address: 0x7E0
+      byte_offset: 0x7E0
       description: Enable exception to enter Halt Mode.
       fieldset: DEXC2DBG
     - name: ddcause
-      address: 0x7E1
+      byte_offset: 0x7E1
       description: Detailed exception type information when an exception enters Halt Mode.
       fieldset: DDCAUSE
 # - MARK: fieldsets
@@ -1072,7 +1125,6 @@ fieldset/DDCAUSE:
       description: Indicates the subtypes of a main type. Its definition is listed below. A main type may not have a subtype definition.
       bit_offset: 8
       bit_size: 8
-
 fieldset/MCOUNTER_COMMON:
   description: Machine Counter Fields
   fields:
@@ -1089,10 +1141,9 @@ fieldset/MCOUNTER_COMMON:
       bit_offset: 3
       bit_size: 1
       array:
-        size: 29
+        len: 29
         stride: 1
         start_index: 3 # TODO, support this
-
 fieldset/PMACFG:
   description: PMA Configuration Register 0
   fields:
@@ -1100,11 +1151,20 @@ fieldset/PMACFG:
       description: Event Type
       bit_offset: 0
       bit_size: 2
+      array:
+        len: 4
+        stride: 4
     - name: MTYP
       description: Memory Type
       bit_offset: 2
       bit_size: 4
+      array:
+        len: 4
+        stride: 4
     - name: NAMO
       description: Naturally Aligned Memory Operation
       bit_offset: 6
       bit_size: 1
+      array:
+        len: 4
+        stride: 4
