@@ -1743,7 +1743,7 @@ impl crate::common::SealedCSR for CSR_PMAADDR15 {
 impl crate::common::CSR for CSR_PMAADDR15 {}
 #[doc = "Instruction cache/memory configuration"]
 #[inline(always)]
-pub const fn micm_cfg() -> crate::common::Reg<regs::MicmCfg, CSR_MICM_CFG, crate::common::RW> {
+pub const fn micm_cfg() -> crate::common::Reg<regs::MicmCfg, CSR_MICM_CFG, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1764,7 +1764,7 @@ impl crate::common::SealedCSR for CSR_MICM_CFG {
 impl crate::common::CSR for CSR_MICM_CFG {}
 #[doc = "Data cache/memory configuration"]
 #[inline(always)]
-pub const fn mdcm_cfg() -> crate::common::Reg<regs::MdcmCfg, CSR_MDCM_CFG, crate::common::RW> {
+pub const fn mdcm_cfg() -> crate::common::Reg<regs::MdcmCfg, CSR_MDCM_CFG, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1785,7 +1785,7 @@ impl crate::common::SealedCSR for CSR_MDCM_CFG {
 impl crate::common::CSR for CSR_MDCM_CFG {}
 #[doc = "Miscellaneous configuration"]
 #[inline(always)]
-pub const fn mmsc_cfg() -> crate::common::Reg<regs::MmscCfg, CSR_MMSC_CFG, crate::common::RW> {
+pub const fn mmsc_cfg() -> crate::common::Reg<regs::MmscCfg, CSR_MMSC_CFG, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1806,7 +1806,7 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG {
 impl crate::common::CSR for CSR_MMSC_CFG {}
 #[doc = "Miscellaneous configuration (RV32)"]
 #[inline(always)]
-pub const fn mmsc_cfg2() -> crate::common::Reg<regs::MmscCfg2, CSR_MMSC_CFG2, crate::common::RW> {
+pub const fn mmsc_cfg2() -> crate::common::Reg<regs::MmscCfg2, CSR_MMSC_CFG2, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1827,7 +1827,7 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG2 {
 impl crate::common::CSR for CSR_MMSC_CFG2 {}
 #[doc = "Vector processor configuration"]
 #[inline(always)]
-pub const fn mvec_cfg() -> crate::common::Reg<regs::MvecCfg, CSR_MVEC_CFG, crate::common::RW> {
+pub const fn mvec_cfg() -> crate::common::Reg<regs::MvecCfg, CSR_MVEC_CFG, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1849,7 +1849,7 @@ impl crate::common::CSR for CSR_MVEC_CFG {}
 #[doc = "Current state save for crash debugging"]
 #[inline(always)]
 pub const fn mcrash_statesave(
-) -> crate::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, crate::common::RW> {
+) -> crate::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1870,7 +1870,7 @@ impl crate::common::SealedCSR for CSR_MCRASH_STATESAVE {
 impl crate::common::CSR for CSR_MCRASH_STATESAVE {}
 #[doc = "mstatus state save for crash debugging"]
 #[inline(always)]
-pub const fn mstatus_crashsave() -> crate::common::Reg<u32, CSR_MSTATUS_CRASHSAVE, crate::common::RW>
+pub const fn mstatus_crashsave() -> crate::common::Reg<u32, CSR_MSTATUS_CRASHSAVE, crate::common::R>
 {
     unsafe { crate::common::Reg::new() }
 }
@@ -1892,8 +1892,8 @@ impl crate::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
 impl crate::common::CSR for CSR_MSTATUS_CRASHSAVE {}
 #[doc = "RISC-V Architecture"]
 #[inline(always)]
-pub const fn mrvarch_cfg(
-) -> crate::common::Reg<regs::MrvarchCfg, CSR_MRVARCH_CFG, crate::common::RW> {
+pub const fn mrvarch_cfg() -> crate::common::Reg<regs::MrvarchCfg, CSR_MRVARCH_CFG, crate::common::R>
+{
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1914,8 +1914,7 @@ impl crate::common::SealedCSR for CSR_MRVARCH_CFG {
 impl crate::common::CSR for CSR_MRVARCH_CFG {}
 #[doc = "Cluster cache control base address"]
 #[inline(always)]
-pub const fn mccache_ctl_base() -> crate::common::Reg<u32, CSR_MCCACHE_CTL_BASE, crate::common::RW>
-{
+pub const fn mccache_ctl_base() -> crate::common::Reg<u32, CSR_MCCACHE_CTL_BASE, crate::common::R> {
     unsafe { crate::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]

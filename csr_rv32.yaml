@@ -5,37 +5,46 @@ block/CSR:
     - name: micm_cfg
       byte_offset: 0xFC0
       description: Instruction cache/memory configuration
+      access: Read
       fieldset: MICM_CFG
     - name: mdcm_cfg
       byte_offset: 0xFC1
       description: Data cache/memory configuration
+      access: Read
       fieldset: MDCM_CFG
     - name: mmsc_cfg
       byte_offset: 0xFC2
       description: Miscellaneous configuration
+      access: Read
       fieldset: MMSC_CFG
     - name: mmsc_cfg2
       byte_offset: 0xFC3
       description: Miscellaneous configuration (RV32)
+      access: Read
       fieldset: MMSC_CFG2
     - name: mvec_cfg
       byte_offset: 0xFC7
       description: Vector processor configuration
+      access: Read
       fieldset: MVEC_CFG
     - name: mccache_ctl_base
       byte_offset: 0xFCF
       description: Cluster cache control base address
+      access: Read
     - name: mrvarch_cfg
       byte_offset: 0xFCA
       description: RISC-V Architecture
+      access: Read
       fieldset: MRVARCH_CFG
     # Crash Debug CSRs
     - name: mcrash_statesave
       byte_offset: 0xFC8
       description: Current state save for crash debugging
+      access: Read
       fieldset: MCRASH_STATESAVE
     - name: mstatus_crashsave
       byte_offset: 0xFC9
+      access: Read
       description: mstatus state save for crash debugging
     # Memory CSRs
     - name: milmb
