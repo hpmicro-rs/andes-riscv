@@ -1,5 +1,7 @@
 //! L1C, level 1 cache
 
+use cctl_cmds::L1D_VA_LOCK;
+
 use crate::register;
 use crate::riscv;
 
@@ -90,6 +92,7 @@ pub unsafe fn dc_flush_all() {
     register::mcctlcommand().write_value(cctl_cmds::L1D_WBINVAL_ALL as u32);
 }
 
+#[inline(always)]
 fn cctl_get_address() -> u32 {
     register::mcctlbeginaddr().read()
 }
@@ -109,7 +112,10 @@ fn cacheline_size() -> u32 {
 }
 
 pub unsafe fn l1c_op(opcode: u8, address: u32, size: u32) {
-    unsafe { riscv::register::mstatus::clear_mie() };
+    let mstatus = riscv::register::mstatus::read();
+    if mstatus.mie() {
+        riscv::register::mstatus::clear_mie();
+    }
 
     let ver = register::mmsc_cfg().read().vcctl();
 
@@ -134,5 +140,57 @@ pub unsafe fn l1c_op(opcode: u8, address: u32, size: u32) {
         }
     }
 
-    unsafe { riscv::register::mstatus::set_mie() };
+    if mstatus.mie() {
+        riscv::register::mstatus::set_mie();
+    }
+}
+
+fn check_addr_size(address: u32, size: u32) {
+    let cl_sz = cacheline_size();
+
+    assert!(
+        address % cl_sz == 0,
+        "address must be aligned to cacheline size"
+    );
+    assert!(size % cl_sz == 0, "size must be multiple of cacheline size");
+}
+
+pub unsafe fn dc_fill_lock(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(L1D_VA_LOCK, address, size);
+}
+
+pub unsafe fn dc_invalidate(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(cctl_cmds::L1D_VA_INVAL, address, size);
+}
+
+pub unsafe fn dc_writeback(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(cctl_cmds::L1D_VA_WB, address, size);
+}
+
+pub unsafe fn dc_flush(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(cctl_cmds::L1D_VA_WBINVAL, address, size);
+}
+
+pub unsafe fn ic_invalidate(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(cctl_cmds::L1I_VA_INVAL, address, size);
+}
+
+pub unsafe fn ic_fill_lock(address: u32, size: u32) {
+    check_addr_size(address, size);
+    l1c_op(cctl_cmds::L1I_VA_LOCK, address, size);
+}
+
+#[inline]
+pub fn cacheline_align_down(addr: u32) -> u32 {
+    addr & !(cacheline_size() - 1)
+}
+
+#[inline]
+pub fn cacheline_align_up(addr: u32) -> u32 {
+    cacheline_align_down(addr + cacheline_size() - 1)
 }

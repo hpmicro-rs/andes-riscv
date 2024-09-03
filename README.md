@@ -9,10 +9,30 @@ This crate is a supplement to the `riscv` crate, which provides the core RISC-V 
 The chiptool fork used by this crate is available at <https://github.com/andelf/chiptool/tree/rv-csr>.
 The wrapper generator code is at <https://github.com/embedded-drivers/yaml2pac>.
 
-## TODOs
+## Overview
+
+### Series
+
+- Entry Series: D23, N22
+- 25 Series
+- 27 Series
+- 45 Series
+- AX60 Series
+
+### Known Platform and Chips
+
+- HPMicro's HPM5xxx/HPM6xxx series, D25(F)/D45 core
+- BK7256, D25(F) dual core
+- Renesas' RZ/Five MPU, AX45MP single core
+  - SBC: [Tinker V](https://tinker-board.asus.com/series/tinker-v.html)
+- Renesas' R9A0 series, N22 or D25(F) core
+- Telink's TLSR9 series, D25(F) core
+- GOWIN's GW5AST-138, FPGA with Andes A25 RISC-V CPU IP and AE350 subsystem
+
+## Project Status
 
 - [x] 32-bit CSRs
-- [ ] L1C operations
+- [x] L1C operations
 - [ ] 64-bit platform support
 
 ## CSRs
@@ -20,14 +40,6 @@ The wrapper generator code is at <https://github.com/embedded-drivers/yaml2pac>.
 ### AndeStar V5 machine mode CSRs
 
 Configuration Registers
-
-micm_cfg
-mdcm_cfg
-mmsc_cfg
-mmsc_cfg2
-mvec_cfg
-mccache_ctl_base
-mrvarch_cfg
 
 | Address | Privilege | Name | Description |
 |---------|-----------|------|-------------|
@@ -41,26 +53,12 @@ mrvarch_cfg
 
 Crash Debug CSRs
 
-mcrash_statesave
-mstatus_crashsave
-
 | Address | Privilege | Name | Description |
 |---------|-----------|-------------------|----------------------------------------|
 | 0xFC8 | MRO | mcrash_statesave | Current state save for crash debugging |
 | 0xFC9 | MRO | mstatus_crashsave | mstatus state save for crash debugging |
 
 Memory CSRs
-
-milmb
-mdlmb
-mecccode
-mnvec
-mcache_ctl
-mcctlbeginaddr
-mcctlcommand
-mcctldata
-mppib
-mfiob
 
 | Address | Privilege | Name | Description |
 |---------|-----------|----------------------|----------------------------------------|
@@ -76,10 +74,6 @@ mfiob
 | 0x7F1 | MRW | mfiob | Fast IO interface base address |
 
 Hardware Stack Protection & Recording
-
-mhsp_ctl
-msp_bound
-msp_base
 
 | Address | Privilege | Name | Description |
 |---------|-----------|----------------|--------------------------------|
