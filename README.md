@@ -6,6 +6,9 @@ This crate has machine-generated code from YAML definitions.
 
 This crate is a supplement to the `riscv` crate, which provides the core RISC-V support.
 
+The chiptool fork used by this crate is available at <https://github.com/andelf/chiptool/tree/rv-csr>.
+The wrapper generator code is at <https://github.com/embedded-drivers/yaml2pac>.
+
 ## TODOs
 
 - [x] 32-bit CSRs
