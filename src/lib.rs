@@ -5,9 +5,8 @@
 /// The `register` module provides access to the processor's registers
 pub mod register;
 
-#[doc(hidden)]
-pub mod common;
-
 pub mod l1c;
 
 pub use riscv;
+
+pub mod plic;

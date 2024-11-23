@@ -5,13 +5,13 @@
 
 #[doc = "Instruction local memory base address."]
 #[inline(always)]
-pub const fn milmb() -> crate::common::Reg<regs::Milmb, CSR_MILMB, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn milmb() -> self::common::Reg<regs::Milmb, CSR_MILMB, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MILMB;
-impl crate::common::SealedCSR for CSR_MILMB {
+impl self::common::SealedCSR for CSR_MILMB {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -23,16 +23,16 @@ impl crate::common::SealedCSR for CSR_MILMB {
         core :: arch :: asm ! ("csrrw x0, 0x7c0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MILMB {}
+impl self::common::CSR for CSR_MILMB {}
 #[doc = "Data local memory base address."]
 #[inline(always)]
-pub const fn mdlmb() -> crate::common::Reg<regs::Mdlmb, CSR_MDLMB, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mdlmb() -> self::common::Reg<regs::Mdlmb, CSR_MDLMB, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MDLMB;
-impl crate::common::SealedCSR for CSR_MDLMB {
+impl self::common::SealedCSR for CSR_MDLMB {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -44,16 +44,16 @@ impl crate::common::SealedCSR for CSR_MDLMB {
         core :: arch :: asm ! ("csrrw x0, 0x7c1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MDLMB {}
+impl self::common::CSR for CSR_MDLMB {}
 #[doc = "ECC code."]
 #[inline(always)]
-pub const fn mecc_code() -> crate::common::Reg<regs::MeccCode, CSR_MECC_CODE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mecc_code() -> self::common::Reg<regs::MeccCode, CSR_MECC_CODE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MECC_CODE;
-impl crate::common::SealedCSR for CSR_MECC_CODE {
+impl self::common::SealedCSR for CSR_MECC_CODE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -65,16 +65,16 @@ impl crate::common::SealedCSR for CSR_MECC_CODE {
         core :: arch :: asm ! ("csrrw x0, 0x7c2, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MECC_CODE {}
+impl self::common::CSR for CSR_MECC_CODE {}
 #[doc = "NMI-handler base address."]
 #[inline(always)]
-pub const fn mnvec() -> crate::common::Reg<u32, CSR_MNVEC, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mnvec() -> self::common::Reg<u32, CSR_MNVEC, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MNVEC;
-impl crate::common::SealedCSR for CSR_MNVEC {
+impl self::common::SealedCSR for CSR_MNVEC {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -86,16 +86,16 @@ impl crate::common::SealedCSR for CSR_MNVEC {
         core :: arch :: asm ! ("csrrw x0, 0x7c3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MNVEC {}
+impl self::common::CSR for CSR_MNVEC {}
 #[doc = "Additional machine mode status"]
 #[inline(always)]
-pub const fn mxstatus() -> crate::common::Reg<regs::Mxstatus, CSR_MXSTATUS, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mxstatus() -> self::common::Reg<regs::Mxstatus, CSR_MXSTATUS, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MXSTATUS;
-impl crate::common::SealedCSR for CSR_MXSTATUS {
+impl self::common::SealedCSR for CSR_MXSTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -107,16 +107,16 @@ impl crate::common::SealedCSR for CSR_MXSTATUS {
         core :: arch :: asm ! ("csrrw x0, 0x7c4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MXSTATUS {}
+impl self::common::CSR for CSR_MXSTATUS {}
 #[doc = "Performance throttling control"]
 #[inline(always)]
-pub const fn mpft_ctl() -> crate::common::Reg<regs::MpftCtl, CSR_MPFT_CTL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mpft_ctl() -> self::common::Reg<regs::MpftCtl, CSR_MPFT_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MPFT_CTL;
-impl crate::common::SealedCSR for CSR_MPFT_CTL {
+impl self::common::SealedCSR for CSR_MPFT_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -128,16 +128,16 @@ impl crate::common::SealedCSR for CSR_MPFT_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x7c5, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MPFT_CTL {}
+impl self::common::CSR for CSR_MPFT_CTL {}
 #[doc = "Hardware stack protection control"]
 #[inline(always)]
-pub const fn mhsp_ctl() -> crate::common::Reg<regs::MhspCtl, CSR_MHSP_CTL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mhsp_ctl() -> self::common::Reg<regs::MhspCtl, CSR_MHSP_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MHSP_CTL;
-impl crate::common::SealedCSR for CSR_MHSP_CTL {
+impl self::common::SealedCSR for CSR_MHSP_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -149,16 +149,16 @@ impl crate::common::SealedCSR for CSR_MHSP_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x7c6, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MHSP_CTL {}
+impl self::common::CSR for CSR_MHSP_CTL {}
 #[doc = "SP bound register"]
 #[inline(always)]
-pub const fn msp_bound() -> crate::common::Reg<u32, CSR_MSP_BOUND, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msp_bound() -> self::common::Reg<u32, CSR_MSP_BOUND, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSP_BOUND;
-impl crate::common::SealedCSR for CSR_MSP_BOUND {
+impl self::common::SealedCSR for CSR_MSP_BOUND {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -170,16 +170,16 @@ impl crate::common::SealedCSR for CSR_MSP_BOUND {
         core :: arch :: asm ! ("csrrw x0, 0x7c7, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSP_BOUND {}
+impl self::common::CSR for CSR_MSP_BOUND {}
 #[doc = "SP base register"]
 #[inline(always)]
-pub const fn msp_base() -> crate::common::Reg<u32, CSR_MSP_BASE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msp_base() -> self::common::Reg<u32, CSR_MSP_BASE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSP_BASE;
-impl crate::common::SealedCSR for CSR_MSP_BASE {
+impl self::common::SealedCSR for CSR_MSP_BASE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -191,16 +191,16 @@ impl crate::common::SealedCSR for CSR_MSP_BASE {
         core :: arch :: asm ! ("csrrw x0, 0x7c8, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSP_BASE {}
+impl self::common::CSR for CSR_MSP_BASE {}
 #[doc = "Detailed exception cause"]
 #[inline(always)]
-pub const fn mdcause() -> crate::common::Reg<regs::Mdcause, CSR_MDCAUSE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mdcause() -> self::common::Reg<regs::Mdcause, CSR_MDCAUSE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MDCAUSE;
-impl crate::common::SealedCSR for CSR_MDCAUSE {
+impl self::common::SealedCSR for CSR_MDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -212,17 +212,16 @@ impl crate::common::SealedCSR for CSR_MDCAUSE {
         core :: arch :: asm ! ("csrrw x0, 0x7c9, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MDCAUSE {}
+impl self::common::CSR for CSR_MDCAUSE {}
 #[doc = "Cache control"]
 #[inline(always)]
-pub const fn mcache_ctl() -> crate::common::Reg<regs::McacheCtl, CSR_MCACHE_CTL, crate::common::RW>
-{
-    unsafe { crate::common::Reg::new() }
+pub const fn mcache_ctl() -> self::common::Reg<regs::McacheCtl, CSR_MCACHE_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCACHE_CTL;
-impl crate::common::SealedCSR for CSR_MCACHE_CTL {
+impl self::common::SealedCSR for CSR_MCACHE_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -234,16 +233,16 @@ impl crate::common::SealedCSR for CSR_MCACHE_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x7ca, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCACHE_CTL {}
+impl self::common::CSR for CSR_MCACHE_CTL {}
 #[doc = "CCTL begin address"]
 #[inline(always)]
-pub const fn mcctlbeginaddr() -> crate::common::Reg<u32, CSR_MCCTLBEGINADDR, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mcctlbeginaddr() -> self::common::Reg<u32, CSR_MCCTLBEGINADDR, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCCTLBEGINADDR;
-impl crate::common::SealedCSR for CSR_MCCTLBEGINADDR {
+impl self::common::SealedCSR for CSR_MCCTLBEGINADDR {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -255,16 +254,16 @@ impl crate::common::SealedCSR for CSR_MCCTLBEGINADDR {
         core :: arch :: asm ! ("csrrw x0, 0x7cb, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCCTLBEGINADDR {}
+impl self::common::CSR for CSR_MCCTLBEGINADDR {}
 #[doc = "CCTL command"]
 #[inline(always)]
-pub const fn mcctlcommand() -> crate::common::Reg<u32, CSR_MCCTLCOMMAND, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mcctlcommand() -> self::common::Reg<u32, CSR_MCCTLCOMMAND, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCCTLCOMMAND;
-impl crate::common::SealedCSR for CSR_MCCTLCOMMAND {
+impl self::common::SealedCSR for CSR_MCCTLCOMMAND {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -276,16 +275,16 @@ impl crate::common::SealedCSR for CSR_MCCTLCOMMAND {
         core :: arch :: asm ! ("csrrw x0, 0x7cc, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCCTLCOMMAND {}
+impl self::common::CSR for CSR_MCCTLCOMMAND {}
 #[doc = "CCTL data"]
 #[inline(always)]
-pub const fn mcctldata() -> crate::common::Reg<u32, CSR_MCCTLDATA, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mcctldata() -> self::common::Reg<u32, CSR_MCCTLDATA, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCCTLDATA;
-impl crate::common::SealedCSR for CSR_MCCTLDATA {
+impl self::common::SealedCSR for CSR_MCCTLDATA {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -297,17 +296,17 @@ impl crate::common::SealedCSR for CSR_MCCTLDATA {
         core :: arch :: asm ! ("csrrw x0, 0x7cd, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCCTLDATA {}
+impl self::common::CSR for CSR_MCCTLDATA {}
 #[doc = "Counter write enable"]
 #[inline(always)]
 pub const fn mcounterwen(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTERWEN, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERWEN, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTERWEN;
-impl crate::common::SealedCSR for CSR_MCOUNTERWEN {
+impl self::common::SealedCSR for CSR_MCOUNTERWEN {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -319,17 +318,17 @@ impl crate::common::SealedCSR for CSR_MCOUNTERWEN {
         core :: arch :: asm ! ("csrrw x0, 0x7ce, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTERWEN {}
+impl self::common::CSR for CSR_MCOUNTERWEN {}
 #[doc = "Counter overflow interrupt enable"]
 #[inline(always)]
 pub const fn mcounterinten(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTERINTEN, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERINTEN, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTERINTEN;
-impl crate::common::SealedCSR for CSR_MCOUNTERINTEN {
+impl self::common::SealedCSR for CSR_MCOUNTERINTEN {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -341,16 +340,16 @@ impl crate::common::SealedCSR for CSR_MCOUNTERINTEN {
         core :: arch :: asm ! ("csrrw x0, 0x7cf, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTERINTEN {}
+impl self::common::CSR for CSR_MCOUNTERINTEN {}
 #[doc = "Miscellaneous control"]
 #[inline(always)]
-pub const fn mmisc_ctl() -> crate::common::Reg<regs::MmiscCtl, CSR_MMISC_CTL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mmisc_ctl() -> self::common::Reg<regs::MmiscCtl, CSR_MMISC_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MMISC_CTL;
-impl crate::common::SealedCSR for CSR_MMISC_CTL {
+impl self::common::SealedCSR for CSR_MMISC_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -362,17 +361,17 @@ impl crate::common::SealedCSR for CSR_MMISC_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x7d0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MMISC_CTL {}
+impl self::common::CSR for CSR_MMISC_CTL {}
 #[doc = "Counter not counting in M-mode"]
 #[inline(always)]
 pub const fn mcountermask_m(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_M, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_M, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTERMASK_M;
-impl crate::common::SealedCSR for CSR_MCOUNTERMASK_M {
+impl self::common::SealedCSR for CSR_MCOUNTERMASK_M {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -384,17 +383,17 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_M {
         core :: arch :: asm ! ("csrrw x0, 0x7d1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTERMASK_M {}
+impl self::common::CSR for CSR_MCOUNTERMASK_M {}
 #[doc = "Counter not counting in S-mode"]
 #[inline(always)]
 pub const fn mcountermask_s(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_S, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_S, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTERMASK_S;
-impl crate::common::SealedCSR for CSR_MCOUNTERMASK_S {
+impl self::common::SealedCSR for CSR_MCOUNTERMASK_S {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -406,17 +405,17 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_S {
         core :: arch :: asm ! ("csrrw x0, 0x7d2, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTERMASK_S {}
+impl self::common::CSR for CSR_MCOUNTERMASK_S {}
 #[doc = "Counter not counting in U-mode"]
 #[inline(always)]
 pub const fn mcountermask_u(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_U, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_U, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTERMASK_U;
-impl crate::common::SealedCSR for CSR_MCOUNTERMASK_U {
+impl self::common::SealedCSR for CSR_MCOUNTERMASK_U {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -428,17 +427,17 @@ impl crate::common::SealedCSR for CSR_MCOUNTERMASK_U {
         core :: arch :: asm ! ("csrrw x0, 0x7d3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTERMASK_U {}
+impl self::common::CSR for CSR_MCOUNTERMASK_U {}
 #[doc = "Counter overflow status"]
 #[inline(always)]
 pub const fn mcounterovf(
-) -> crate::common::Reg<regs::McounterCommon, CSR_MCOUNTEROVF, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTEROVF, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCOUNTEROVF;
-impl crate::common::SealedCSR for CSR_MCOUNTEROVF {
+impl self::common::SealedCSR for CSR_MCOUNTEROVF {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -450,16 +449,16 @@ impl crate::common::SealedCSR for CSR_MCOUNTEROVF {
         core :: arch :: asm ! ("csrrw x0, 0x7d4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCOUNTEROVF {}
+impl self::common::CSR for CSR_MCOUNTEROVF {}
 #[doc = "Supervisor local interrupt delegation"]
 #[inline(always)]
-pub const fn mslideleg() -> crate::common::Reg<regs::Mslideleg, CSR_MSLIDELEG, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mslideleg() -> self::common::Reg<regs::Mslideleg, CSR_MSLIDELEG, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSLIDELEG;
-impl crate::common::SealedCSR for CSR_MSLIDELEG {
+impl self::common::SealedCSR for CSR_MSLIDELEG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -471,17 +470,17 @@ impl crate::common::SealedCSR for CSR_MSLIDELEG {
         core :: arch :: asm ! ("csrrw x0, 0x7d5, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSLIDELEG {}
+impl self::common::CSR for CSR_MSLIDELEG {}
 #[doc = "Status save register (level 1 & level 2)"]
 #[inline(always)]
-pub const fn msavestatus(
-) -> crate::common::Reg<regs::Msavestatus, CSR_MSAVESTATUS, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msavestatus() -> self::common::Reg<regs::Msavestatus, CSR_MSAVESTATUS, self::common::RW>
+{
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVESTATUS;
-impl crate::common::SealedCSR for CSR_MSAVESTATUS {
+impl self::common::SealedCSR for CSR_MSAVESTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -493,16 +492,16 @@ impl crate::common::SealedCSR for CSR_MSAVESTATUS {
         core :: arch :: asm ! ("csrrw x0, 0x7d6, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVESTATUS {}
+impl self::common::CSR for CSR_MSAVESTATUS {}
 #[doc = "EPC save register (level 1)"]
 #[inline(always)]
-pub const fn msaveepc1() -> crate::common::Reg<u32, CSR_MSAVEEPC1, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msaveepc1() -> self::common::Reg<u32, CSR_MSAVEEPC1, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVEEPC1;
-impl crate::common::SealedCSR for CSR_MSAVEEPC1 {
+impl self::common::SealedCSR for CSR_MSAVEEPC1 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -514,16 +513,16 @@ impl crate::common::SealedCSR for CSR_MSAVEEPC1 {
         core :: arch :: asm ! ("csrrw x0, 0x7d7, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVEEPC1 {}
+impl self::common::CSR for CSR_MSAVEEPC1 {}
 #[doc = "Exception cause save register (level 1)"]
 #[inline(always)]
-pub const fn msavecause1() -> crate::common::Reg<u32, CSR_MSAVECAUSE1, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msavecause1() -> self::common::Reg<u32, CSR_MSAVECAUSE1, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVECAUSE1;
-impl crate::common::SealedCSR for CSR_MSAVECAUSE1 {
+impl self::common::SealedCSR for CSR_MSAVECAUSE1 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -535,16 +534,16 @@ impl crate::common::SealedCSR for CSR_MSAVECAUSE1 {
         core :: arch :: asm ! ("csrrw x0, 0x7d8, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVECAUSE1 {}
+impl self::common::CSR for CSR_MSAVECAUSE1 {}
 #[doc = "EPC save register (level 2)"]
 #[inline(always)]
-pub const fn msaveepc2() -> crate::common::Reg<u32, CSR_MSAVEEPC2, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msaveepc2() -> self::common::Reg<u32, CSR_MSAVEEPC2, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVEEPC2;
-impl crate::common::SealedCSR for CSR_MSAVEEPC2 {
+impl self::common::SealedCSR for CSR_MSAVEEPC2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -556,16 +555,16 @@ impl crate::common::SealedCSR for CSR_MSAVEEPC2 {
         core :: arch :: asm ! ("csrrw x0, 0x7d9, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVEEPC2 {}
+impl self::common::CSR for CSR_MSAVEEPC2 {}
 #[doc = "Exception cause save register (level 2)"]
 #[inline(always)]
-pub const fn msavecause2() -> crate::common::Reg<u32, CSR_MSAVECAUSE2, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msavecause2() -> self::common::Reg<u32, CSR_MSAVECAUSE2, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVECAUSE2;
-impl crate::common::SealedCSR for CSR_MSAVECAUSE2 {
+impl self::common::SealedCSR for CSR_MSAVECAUSE2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -577,16 +576,16 @@ impl crate::common::SealedCSR for CSR_MSAVECAUSE2 {
         core :: arch :: asm ! ("csrrw x0, 0x7da, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVECAUSE2 {}
+impl self::common::CSR for CSR_MSAVECAUSE2 {}
 #[doc = "Detailed exception cause save (level 1)"]
 #[inline(always)]
-pub const fn msavedcause1() -> crate::common::Reg<u32, CSR_MSAVEDCAUSE1, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msavedcause1() -> self::common::Reg<u32, CSR_MSAVEDCAUSE1, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVEDCAUSE1;
-impl crate::common::SealedCSR for CSR_MSAVEDCAUSE1 {
+impl self::common::SealedCSR for CSR_MSAVEDCAUSE1 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -598,16 +597,16 @@ impl crate::common::SealedCSR for CSR_MSAVEDCAUSE1 {
         core :: arch :: asm ! ("csrrw x0, 0x7db, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVEDCAUSE1 {}
+impl self::common::CSR for CSR_MSAVEDCAUSE1 {}
 #[doc = "Detailed exception cause save (level 2)"]
 #[inline(always)]
-pub const fn msavedcause2() -> crate::common::Reg<u32, CSR_MSAVEDCAUSE2, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn msavedcause2() -> self::common::Reg<u32, CSR_MSAVEDCAUSE2, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSAVEDCAUSE2;
-impl crate::common::SealedCSR for CSR_MSAVEDCAUSE2 {
+impl self::common::SealedCSR for CSR_MSAVEDCAUSE2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -619,16 +618,16 @@ impl crate::common::SealedCSR for CSR_MSAVEDCAUSE2 {
         core :: arch :: asm ! ("csrrw x0, 0x7dc, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSAVEDCAUSE2 {}
+impl self::common::CSR for CSR_MSAVEDCAUSE2 {}
 #[doc = "Clock control"]
 #[inline(always)]
-pub const fn mclk_ctl() -> crate::common::Reg<u32, CSR_MCLK_CTL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mclk_ctl() -> self::common::Reg<u32, CSR_MCLK_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCLK_CTL;
-impl crate::common::SealedCSR for CSR_MCLK_CTL {
+impl self::common::SealedCSR for CSR_MCLK_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -640,16 +639,16 @@ impl crate::common::SealedCSR for CSR_MCLK_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x7df, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCLK_CTL {}
+impl self::common::CSR for CSR_MCLK_CTL {}
 #[doc = "Enable exception to enter Halt Mode."]
 #[inline(always)]
-pub const fn dexc2dbg() -> crate::common::Reg<regs::Dexc2dbg, CSR_DEXC2DBG, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn dexc2dbg() -> self::common::Reg<regs::Dexc2dbg, CSR_DEXC2DBG, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_DEXC2DBG;
-impl crate::common::SealedCSR for CSR_DEXC2DBG {
+impl self::common::SealedCSR for CSR_DEXC2DBG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -661,16 +660,16 @@ impl crate::common::SealedCSR for CSR_DEXC2DBG {
         core :: arch :: asm ! ("csrrw x0, 0x7e0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_DEXC2DBG {}
+impl self::common::CSR for CSR_DEXC2DBG {}
 #[doc = "Detailed exception type information when an exception enters Halt Mode."]
 #[inline(always)]
-pub const fn ddcause() -> crate::common::Reg<regs::Ddcause, CSR_DDCAUSE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn ddcause() -> self::common::Reg<regs::Ddcause, CSR_DDCAUSE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_DDCAUSE;
-impl crate::common::SealedCSR for CSR_DDCAUSE {
+impl self::common::SealedCSR for CSR_DDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -682,16 +681,16 @@ impl crate::common::SealedCSR for CSR_DDCAUSE {
         core :: arch :: asm ! ("csrrw x0, 0x7e1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_DDCAUSE {}
+impl self::common::CSR for CSR_DDCAUSE {}
 #[doc = "Store mxstatus to stack"]
 #[inline(always)]
-pub const fn pushmxstatus() -> crate::common::Reg<u32, CSR_PUSHMXSTATUS, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pushmxstatus() -> self::common::Reg<u32, CSR_PUSHMXSTATUS, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PUSHMXSTATUS;
-impl crate::common::SealedCSR for CSR_PUSHMXSTATUS {
+impl self::common::SealedCSR for CSR_PUSHMXSTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -703,17 +702,16 @@ impl crate::common::SealedCSR for CSR_PUSHMXSTATUS {
         core :: arch :: asm ! ("csrrw x0, 0x7eb, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PUSHMXSTATUS {}
+impl self::common::CSR for CSR_PUSHMXSTATUS {}
 #[doc = "Interrupt common entry point"]
 #[inline(always)]
-pub const fn mirq_entry() -> crate::common::Reg<regs::MirqEntry, CSR_MIRQ_ENTRY, crate::common::RW>
-{
-    unsafe { crate::common::Reg::new() }
+pub const fn mirq_entry() -> self::common::Reg<regs::MirqEntry, CSR_MIRQ_ENTRY, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MIRQ_ENTRY;
-impl crate::common::SealedCSR for CSR_MIRQ_ENTRY {
+impl self::common::SealedCSR for CSR_MIRQ_ENTRY {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -725,16 +723,16 @@ impl crate::common::SealedCSR for CSR_MIRQ_ENTRY {
         core :: arch :: asm ! ("csrrw x0, 0x7ec, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MIRQ_ENTRY {}
+impl self::common::CSR for CSR_MIRQ_ENTRY {}
 #[doc = "Select interrupt and call ISR"]
 #[inline(always)]
-pub const fn mintsel_jal() -> crate::common::Reg<u32, CSR_MINTSEL_JAL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mintsel_jal() -> self::common::Reg<u32, CSR_MINTSEL_JAL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MINTSEL_JAL;
-impl crate::common::SealedCSR for CSR_MINTSEL_JAL {
+impl self::common::SealedCSR for CSR_MINTSEL_JAL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -746,16 +744,16 @@ impl crate::common::SealedCSR for CSR_MINTSEL_JAL {
         core :: arch :: asm ! ("csrrw x0, 0x7ed, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MINTSEL_JAL {}
+impl self::common::CSR for CSR_MINTSEL_JAL {}
 #[doc = "Store mcause to stack"]
 #[inline(always)]
-pub const fn pushmcause() -> crate::common::Reg<u32, CSR_PUSHMCAUSE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pushmcause() -> self::common::Reg<u32, CSR_PUSHMCAUSE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PUSHMCAUSE;
-impl crate::common::SealedCSR for CSR_PUSHMCAUSE {
+impl self::common::SealedCSR for CSR_PUSHMCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -767,16 +765,16 @@ impl crate::common::SealedCSR for CSR_PUSHMCAUSE {
         core :: arch :: asm ! ("csrrw x0, 0x7ee, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PUSHMCAUSE {}
+impl self::common::CSR for CSR_PUSHMCAUSE {}
 #[doc = "Store mepc to stack"]
 #[inline(always)]
-pub const fn pushmepc() -> crate::common::Reg<u32, CSR_PUSHMEPC, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pushmepc() -> self::common::Reg<u32, CSR_PUSHMEPC, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PUSHMEPC;
-impl crate::common::SealedCSR for CSR_PUSHMEPC {
+impl self::common::SealedCSR for CSR_PUSHMEPC {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -788,16 +786,16 @@ impl crate::common::SealedCSR for CSR_PUSHMEPC {
         core :: arch :: asm ! ("csrrw x0, 0x7ef, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PUSHMEPC {}
+impl self::common::CSR for CSR_PUSHMEPC {}
 #[doc = "Private peripheral interface base address"]
 #[inline(always)]
-pub const fn mppib() -> crate::common::Reg<regs::Mppib, CSR_MPPIB, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mppib() -> self::common::Reg<regs::Mppib, CSR_MPPIB, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MPPIB;
-impl crate::common::SealedCSR for CSR_MPPIB {
+impl self::common::SealedCSR for CSR_MPPIB {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -809,16 +807,16 @@ impl crate::common::SealedCSR for CSR_MPPIB {
         core :: arch :: asm ! ("csrrw x0, 0x7f0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MPPIB {}
+impl self::common::CSR for CSR_MPPIB {}
 #[doc = "Fast IO interface base address"]
 #[inline(always)]
-pub const fn mfiob() -> crate::common::Reg<regs::Mfiob, CSR_MFIOB, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mfiob() -> self::common::Reg<regs::Mfiob, CSR_MFIOB, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MFIOB;
-impl crate::common::SealedCSR for CSR_MFIOB {
+impl self::common::SealedCSR for CSR_MFIOB {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -830,16 +828,16 @@ impl crate::common::SealedCSR for CSR_MFIOB {
         core :: arch :: asm ! ("csrrw x0, 0x7f1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MFIOB {}
+impl self::common::CSR for CSR_MFIOB {}
 #[doc = "Instruction table base address for CoDense extension."]
 #[inline(always)]
-pub const fn uitb() -> crate::common::Reg<regs::Uitb, CSR_UITB, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn uitb() -> self::common::Reg<regs::Uitb, CSR_UITB, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_UITB;
-impl crate::common::SealedCSR for CSR_UITB {
+impl self::common::SealedCSR for CSR_UITB {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -851,16 +849,16 @@ impl crate::common::SealedCSR for CSR_UITB {
         core :: arch :: asm ! ("csrrw x0, 0x800, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_UITB {}
+impl self::common::CSR for CSR_UITB {}
 #[doc = "Contains overflow flag for DSP extension."]
 #[inline(always)]
-pub const fn ucode() -> crate::common::Reg<regs::Ucode, CSR_UCODE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn ucode() -> self::common::Reg<regs::Ucode, CSR_UCODE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_UCODE;
-impl crate::common::SealedCSR for CSR_UCODE {
+impl self::common::SealedCSR for CSR_UCODE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -872,16 +870,16 @@ impl crate::common::SealedCSR for CSR_UCODE {
         core :: arch :: asm ! ("csrrw x0, 0x801, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_UCODE {}
+impl self::common::CSR for CSR_UCODE {}
 #[doc = "User detailed trap cause"]
 #[inline(always)]
-pub const fn udcause() -> crate::common::Reg<u32, CSR_UDCAUSE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn udcause() -> self::common::Reg<u32, CSR_UDCAUSE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_UDCAUSE;
-impl crate::common::SealedCSR for CSR_UDCAUSE {
+impl self::common::SealedCSR for CSR_UDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -893,16 +891,16 @@ impl crate::common::SealedCSR for CSR_UDCAUSE {
         core :: arch :: asm ! ("csrrw x0, 0x809, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_UDCAUSE {}
+impl self::common::CSR for CSR_UDCAUSE {}
 #[doc = "CCTL begin address"]
 #[inline(always)]
-pub const fn ucctlbeginaddr() -> crate::common::Reg<u32, CSR_UCCTLBEGINADDR, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn ucctlbeginaddr() -> self::common::Reg<u32, CSR_UCCTLBEGINADDR, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_UCCTLBEGINADDR;
-impl crate::common::SealedCSR for CSR_UCCTLBEGINADDR {
+impl self::common::SealedCSR for CSR_UCCTLBEGINADDR {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -914,16 +912,16 @@ impl crate::common::SealedCSR for CSR_UCCTLBEGINADDR {
         core :: arch :: asm ! ("csrrw x0, 0x80b, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_UCCTLBEGINADDR {}
+impl self::common::CSR for CSR_UCCTLBEGINADDR {}
 #[doc = "CCTL command"]
 #[inline(always)]
-pub const fn ucctlcommand() -> crate::common::Reg<u32, CSR_UCCTLCOMMAND, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn ucctlcommand() -> self::common::Reg<u32, CSR_UCCTLCOMMAND, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_UCCTLCOMMAND;
-impl crate::common::SealedCSR for CSR_UCCTLCOMMAND {
+impl self::common::SealedCSR for CSR_UCCTLCOMMAND {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -935,16 +933,16 @@ impl crate::common::SealedCSR for CSR_UCCTLCOMMAND {
         core :: arch :: asm ! ("csrrw x0, 0x80c, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_UCCTLCOMMAND {}
+impl self::common::CSR for CSR_UCCTLCOMMAND {}
 #[doc = "Wait for event control"]
 #[inline(always)]
-pub const fn wfe() -> crate::common::Reg<regs::Wfe, CSR_WFE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn wfe() -> self::common::Reg<regs::Wfe, CSR_WFE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_WFE;
-impl crate::common::SealedCSR for CSR_WFE {
+impl self::common::SealedCSR for CSR_WFE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -956,17 +954,16 @@ impl crate::common::SealedCSR for CSR_WFE {
         core :: arch :: asm ! ("csrrw x0, 0x810, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_WFE {}
+impl self::common::CSR for CSR_WFE {}
 #[doc = "Sleep value"]
 #[inline(always)]
-pub const fn sleepvalue() -> crate::common::Reg<regs::Sleepvalue, CSR_SLEEPVALUE, crate::common::RW>
-{
-    unsafe { crate::common::Reg::new() }
+pub const fn sleepvalue() -> self::common::Reg<regs::Sleepvalue, CSR_SLEEPVALUE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SLEEPVALUE;
-impl crate::common::SealedCSR for CSR_SLEEPVALUE {
+impl self::common::SealedCSR for CSR_SLEEPVALUE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -978,16 +975,16 @@ impl crate::common::SealedCSR for CSR_SLEEPVALUE {
         core :: arch :: asm ! ("csrrw x0, 0x811, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SLEEPVALUE {}
+impl self::common::CSR for CSR_SLEEPVALUE {}
 #[doc = "Transmit event"]
 #[inline(always)]
-pub const fn txevt() -> crate::common::Reg<regs::Txevt, CSR_TXEVT, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn txevt() -> self::common::Reg<regs::Txevt, CSR_TXEVT, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_TXEVT;
-impl crate::common::SealedCSR for CSR_TXEVT {
+impl self::common::SealedCSR for CSR_TXEVT {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -999,16 +996,16 @@ impl crate::common::SealedCSR for CSR_TXEVT {
         core :: arch :: asm ! ("csrrw x0, 0x812, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_TXEVT {}
+impl self::common::CSR for CSR_TXEVT {}
 #[doc = "Supervisor local interrupt enable"]
 #[inline(always)]
-pub const fn slie() -> crate::common::Reg<regs::Slie, CSR_SLIE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn slie() -> self::common::Reg<regs::Slie, CSR_SLIE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SLIE;
-impl crate::common::SealedCSR for CSR_SLIE {
+impl self::common::SealedCSR for CSR_SLIE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1020,16 +1017,16 @@ impl crate::common::SealedCSR for CSR_SLIE {
         core :: arch :: asm ! ("csrrw x0, 0x9c4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SLIE {}
+impl self::common::CSR for CSR_SLIE {}
 #[doc = "Supervisor local interrupt pending"]
 #[inline(always)]
-pub const fn slip() -> crate::common::Reg<regs::Slip, CSR_SLIP, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn slip() -> self::common::Reg<regs::Slip, CSR_SLIP, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SLIP;
-impl crate::common::SealedCSR for CSR_SLIP {
+impl self::common::SealedCSR for CSR_SLIP {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1041,16 +1038,16 @@ impl crate::common::SealedCSR for CSR_SLIP {
         core :: arch :: asm ! ("csrrw x0, 0x9c5, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SLIP {}
+impl self::common::CSR for CSR_SLIP {}
 #[doc = "Detailed exception cause"]
 #[inline(always)]
-pub const fn sdcause() -> crate::common::Reg<regs::Sdcause, CSR_SDCAUSE, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn sdcause() -> self::common::Reg<regs::Sdcause, CSR_SDCAUSE, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SDCAUSE;
-impl crate::common::SealedCSR for CSR_SDCAUSE {
+impl self::common::SealedCSR for CSR_SDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1062,16 +1059,16 @@ impl crate::common::SealedCSR for CSR_SDCAUSE {
         core :: arch :: asm ! ("csrrw x0, 0x9c9, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SDCAUSE {}
+impl self::common::CSR for CSR_SDCAUSE {}
 #[doc = "CCTL data"]
 #[inline(always)]
-pub const fn scctldata() -> crate::common::Reg<u32, CSR_SCCTLDATA, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn scctldata() -> self::common::Reg<u32, CSR_SCCTLDATA, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCCTLDATA;
-impl crate::common::SealedCSR for CSR_SCCTLDATA {
+impl self::common::SealedCSR for CSR_SCCTLDATA {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1083,17 +1080,17 @@ impl crate::common::SealedCSR for CSR_SCCTLDATA {
         core :: arch :: asm ! ("csrrw x0, 0x9cd, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCCTLDATA {}
+impl self::common::CSR for CSR_SCCTLDATA {}
 #[doc = "Counter overflow interrupt enable"]
 #[inline(always)]
 pub const fn scounterinten(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTERINTEN, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERINTEN, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTERINTEN;
-impl crate::common::SealedCSR for CSR_SCOUNTERINTEN {
+impl self::common::SealedCSR for CSR_SCOUNTERINTEN {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1105,16 +1102,16 @@ impl crate::common::SealedCSR for CSR_SCOUNTERINTEN {
         core :: arch :: asm ! ("csrrw x0, 0x9cf, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTERINTEN {}
+impl self::common::CSR for CSR_SCOUNTERINTEN {}
 #[doc = "Miscellaneous control"]
 #[inline(always)]
-pub const fn smisc_ctl() -> crate::common::Reg<regs::SmiscCtl, CSR_SMISC_CTL, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn smisc_ctl() -> self::common::Reg<regs::SmiscCtl, CSR_SMISC_CTL, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SMISC_CTL;
-impl crate::common::SealedCSR for CSR_SMISC_CTL {
+impl self::common::SealedCSR for CSR_SMISC_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1126,17 +1123,17 @@ impl crate::common::SealedCSR for CSR_SMISC_CTL {
         core :: arch :: asm ! ("csrrw x0, 0x9d0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SMISC_CTL {}
+impl self::common::CSR for CSR_SMISC_CTL {}
 #[doc = "Counter mask for M-mode"]
 #[inline(always)]
 pub const fn scountermask_m(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_M, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_M, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTERMASK_M;
-impl crate::common::SealedCSR for CSR_SCOUNTERMASK_M {
+impl self::common::SealedCSR for CSR_SCOUNTERMASK_M {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1148,17 +1145,17 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_M {
         core :: arch :: asm ! ("csrrw x0, 0x9d1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTERMASK_M {}
+impl self::common::CSR for CSR_SCOUNTERMASK_M {}
 #[doc = "Counter mask for S-mode"]
 #[inline(always)]
 pub const fn scountermask_s(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_S, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_S, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTERMASK_S;
-impl crate::common::SealedCSR for CSR_SCOUNTERMASK_S {
+impl self::common::SealedCSR for CSR_SCOUNTERMASK_S {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1170,17 +1167,17 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_S {
         core :: arch :: asm ! ("csrrw x0, 0x9d2, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTERMASK_S {}
+impl self::common::CSR for CSR_SCOUNTERMASK_S {}
 #[doc = "Counter mask for U-mode"]
 #[inline(always)]
 pub const fn scountermask_u(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_U, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_U, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTERMASK_U;
-impl crate::common::SealedCSR for CSR_SCOUNTERMASK_U {
+impl self::common::SealedCSR for CSR_SCOUNTERMASK_U {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1192,17 +1189,17 @@ impl crate::common::SealedCSR for CSR_SCOUNTERMASK_U {
         core :: arch :: asm ! ("csrrw x0, 0x9d3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTERMASK_U {}
+impl self::common::CSR for CSR_SCOUNTERMASK_U {}
 #[doc = "Counter overflow status"]
 #[inline(always)]
 pub const fn scounterovf(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTEROVF, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTEROVF, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTEROVF;
-impl crate::common::SealedCSR for CSR_SCOUNTEROVF {
+impl self::common::SealedCSR for CSR_SCOUNTEROVF {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1214,17 +1211,17 @@ impl crate::common::SealedCSR for CSR_SCOUNTEROVF {
         core :: arch :: asm ! ("csrrw x0, 0x9d4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTEROVF {}
+impl self::common::CSR for CSR_SCOUNTEROVF {}
 #[doc = "Supervisor counter inhibit"]
 #[inline(always)]
 pub const fn scountinhibit(
-) -> crate::common::Reg<regs::ScounterCommon, CSR_SCOUNTINHIBIT, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTINHIBIT, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SCOUNTINHIBIT;
-impl crate::common::SealedCSR for CSR_SCOUNTINHIBIT {
+impl self::common::SealedCSR for CSR_SCOUNTINHIBIT {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1236,16 +1233,16 @@ impl crate::common::SealedCSR for CSR_SCOUNTINHIBIT {
         core :: arch :: asm ! ("csrrw x0, 0x9e0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SCOUNTINHIBIT {}
+impl self::common::CSR for CSR_SCOUNTINHIBIT {}
 #[doc = "Performance monitoring event selection"]
 #[inline(always)]
-pub const fn shpmevent3() -> crate::common::Reg<u32, CSR_SHPMEVENT3, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn shpmevent3() -> self::common::Reg<u32, CSR_SHPMEVENT3, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SHPMEVENT3;
-impl crate::common::SealedCSR for CSR_SHPMEVENT3 {
+impl self::common::SealedCSR for CSR_SHPMEVENT3 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1257,16 +1254,16 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT3 {
         core :: arch :: asm ! ("csrrw x0, 0x9e3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SHPMEVENT3 {}
+impl self::common::CSR for CSR_SHPMEVENT3 {}
 #[doc = "Performance monitoring event selection"]
 #[inline(always)]
-pub const fn shpmevent4() -> crate::common::Reg<u32, CSR_SHPMEVENT4, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn shpmevent4() -> self::common::Reg<u32, CSR_SHPMEVENT4, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SHPMEVENT4;
-impl crate::common::SealedCSR for CSR_SHPMEVENT4 {
+impl self::common::SealedCSR for CSR_SHPMEVENT4 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1278,16 +1275,16 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT4 {
         core :: arch :: asm ! ("csrrw x0, 0x9e4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SHPMEVENT4 {}
+impl self::common::CSR for CSR_SHPMEVENT4 {}
 #[doc = "Performance monitoring event selection"]
 #[inline(always)]
-pub const fn shpmevent5() -> crate::common::Reg<u32, CSR_SHPMEVENT5, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn shpmevent5() -> self::common::Reg<u32, CSR_SHPMEVENT5, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SHPMEVENT5;
-impl crate::common::SealedCSR for CSR_SHPMEVENT5 {
+impl self::common::SealedCSR for CSR_SHPMEVENT5 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1299,16 +1296,16 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT5 {
         core :: arch :: asm ! ("csrrw x0, 0x9e5, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SHPMEVENT5 {}
+impl self::common::CSR for CSR_SHPMEVENT5 {}
 #[doc = "Performance monitoring event selection"]
 #[inline(always)]
-pub const fn shpmevent6() -> crate::common::Reg<u32, CSR_SHPMEVENT6, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn shpmevent6() -> self::common::Reg<u32, CSR_SHPMEVENT6, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_SHPMEVENT6;
-impl crate::common::SealedCSR for CSR_SHPMEVENT6 {
+impl self::common::SealedCSR for CSR_SHPMEVENT6 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1320,16 +1317,16 @@ impl crate::common::SealedCSR for CSR_SHPMEVENT6 {
         core :: arch :: asm ! ("csrrw x0, 0x9e6, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_SHPMEVENT6 {}
+impl self::common::CSR for CSR_SHPMEVENT6 {}
 #[doc = "PMA configuration"]
 #[inline(always)]
-pub const fn pmacfg0() -> crate::common::Reg<regs::Pmacfg, CSR_PMACFG0, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmacfg0() -> self::common::Reg<regs::Pmacfg, CSR_PMACFG0, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMACFG0;
-impl crate::common::SealedCSR for CSR_PMACFG0 {
+impl self::common::SealedCSR for CSR_PMACFG0 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1341,16 +1338,16 @@ impl crate::common::SealedCSR for CSR_PMACFG0 {
         core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMACFG0 {}
+impl self::common::CSR for CSR_PMACFG0 {}
 #[doc = "PMA configuration"]
 #[inline(always)]
-pub const fn pmacfg1() -> crate::common::Reg<regs::Pmacfg, CSR_PMACFG1, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmacfg1() -> self::common::Reg<regs::Pmacfg, CSR_PMACFG1, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMACFG1;
-impl crate::common::SealedCSR for CSR_PMACFG1 {
+impl self::common::SealedCSR for CSR_PMACFG1 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1362,16 +1359,16 @@ impl crate::common::SealedCSR for CSR_PMACFG1 {
         core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMACFG1 {}
+impl self::common::CSR for CSR_PMACFG1 {}
 #[doc = "PMA configuration"]
 #[inline(always)]
-pub const fn pmacfg2() -> crate::common::Reg<regs::Pmacfg, CSR_PMACFG2, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmacfg2() -> self::common::Reg<regs::Pmacfg, CSR_PMACFG2, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMACFG2;
-impl crate::common::SealedCSR for CSR_PMACFG2 {
+impl self::common::SealedCSR for CSR_PMACFG2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1383,16 +1380,16 @@ impl crate::common::SealedCSR for CSR_PMACFG2 {
         core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMACFG2 {}
+impl self::common::CSR for CSR_PMACFG2 {}
 #[doc = "PMA configuration"]
 #[inline(always)]
-pub const fn pmacfg3() -> crate::common::Reg<regs::Pmacfg, CSR_PMACFG3, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmacfg3() -> self::common::Reg<regs::Pmacfg, CSR_PMACFG3, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMACFG3;
-impl crate::common::SealedCSR for CSR_PMACFG3 {
+impl self::common::SealedCSR for CSR_PMACFG3 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1404,16 +1401,16 @@ impl crate::common::SealedCSR for CSR_PMACFG3 {
         core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMACFG3 {}
+impl self::common::CSR for CSR_PMACFG3 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr0() -> crate::common::Reg<u32, CSR_PMAADDR0, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr0() -> self::common::Reg<u32, CSR_PMAADDR0, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR0;
-impl crate::common::SealedCSR for CSR_PMAADDR0 {
+impl self::common::SealedCSR for CSR_PMAADDR0 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1425,16 +1422,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR0 {
         core :: arch :: asm ! ("csrrw x0, 0xbd0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR0 {}
+impl self::common::CSR for CSR_PMAADDR0 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr1() -> crate::common::Reg<u32, CSR_PMAADDR1, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr1() -> self::common::Reg<u32, CSR_PMAADDR1, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR1;
-impl crate::common::SealedCSR for CSR_PMAADDR1 {
+impl self::common::SealedCSR for CSR_PMAADDR1 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1446,16 +1443,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR1 {
         core :: arch :: asm ! ("csrrw x0, 0xbd1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR1 {}
+impl self::common::CSR for CSR_PMAADDR1 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr2() -> crate::common::Reg<u32, CSR_PMAADDR2, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr2() -> self::common::Reg<u32, CSR_PMAADDR2, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR2;
-impl crate::common::SealedCSR for CSR_PMAADDR2 {
+impl self::common::SealedCSR for CSR_PMAADDR2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1467,16 +1464,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR2 {
         core :: arch :: asm ! ("csrrw x0, 0xbd2, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR2 {}
+impl self::common::CSR for CSR_PMAADDR2 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr3() -> crate::common::Reg<u32, CSR_PMAADDR3, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr3() -> self::common::Reg<u32, CSR_PMAADDR3, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR3;
-impl crate::common::SealedCSR for CSR_PMAADDR3 {
+impl self::common::SealedCSR for CSR_PMAADDR3 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1488,16 +1485,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR3 {
         core :: arch :: asm ! ("csrrw x0, 0xbd3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR3 {}
+impl self::common::CSR for CSR_PMAADDR3 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr4() -> crate::common::Reg<u32, CSR_PMAADDR4, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr4() -> self::common::Reg<u32, CSR_PMAADDR4, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR4;
-impl crate::common::SealedCSR for CSR_PMAADDR4 {
+impl self::common::SealedCSR for CSR_PMAADDR4 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1509,16 +1506,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR4 {
         core :: arch :: asm ! ("csrrw x0, 0xbd4, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR4 {}
+impl self::common::CSR for CSR_PMAADDR4 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr5() -> crate::common::Reg<u32, CSR_PMAADDR5, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr5() -> self::common::Reg<u32, CSR_PMAADDR5, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR5;
-impl crate::common::SealedCSR for CSR_PMAADDR5 {
+impl self::common::SealedCSR for CSR_PMAADDR5 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1530,16 +1527,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR5 {
         core :: arch :: asm ! ("csrrw x0, 0xbd5, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR5 {}
+impl self::common::CSR for CSR_PMAADDR5 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr6() -> crate::common::Reg<u32, CSR_PMAADDR6, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr6() -> self::common::Reg<u32, CSR_PMAADDR6, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR6;
-impl crate::common::SealedCSR for CSR_PMAADDR6 {
+impl self::common::SealedCSR for CSR_PMAADDR6 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1551,16 +1548,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR6 {
         core :: arch :: asm ! ("csrrw x0, 0xbd6, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR6 {}
+impl self::common::CSR for CSR_PMAADDR6 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr7() -> crate::common::Reg<u32, CSR_PMAADDR7, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr7() -> self::common::Reg<u32, CSR_PMAADDR7, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR7;
-impl crate::common::SealedCSR for CSR_PMAADDR7 {
+impl self::common::SealedCSR for CSR_PMAADDR7 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1572,16 +1569,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR7 {
         core :: arch :: asm ! ("csrrw x0, 0xbd7, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR7 {}
+impl self::common::CSR for CSR_PMAADDR7 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr8() -> crate::common::Reg<u32, CSR_PMAADDR8, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr8() -> self::common::Reg<u32, CSR_PMAADDR8, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR8;
-impl crate::common::SealedCSR for CSR_PMAADDR8 {
+impl self::common::SealedCSR for CSR_PMAADDR8 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1593,16 +1590,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR8 {
         core :: arch :: asm ! ("csrrw x0, 0xbd8, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR8 {}
+impl self::common::CSR for CSR_PMAADDR8 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr9() -> crate::common::Reg<u32, CSR_PMAADDR9, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr9() -> self::common::Reg<u32, CSR_PMAADDR9, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR9;
-impl crate::common::SealedCSR for CSR_PMAADDR9 {
+impl self::common::SealedCSR for CSR_PMAADDR9 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1614,16 +1611,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR9 {
         core :: arch :: asm ! ("csrrw x0, 0xbd9, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR9 {}
+impl self::common::CSR for CSR_PMAADDR9 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr10() -> crate::common::Reg<u32, CSR_PMAADDR10, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr10() -> self::common::Reg<u32, CSR_PMAADDR10, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR10;
-impl crate::common::SealedCSR for CSR_PMAADDR10 {
+impl self::common::SealedCSR for CSR_PMAADDR10 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1635,16 +1632,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR10 {
         core :: arch :: asm ! ("csrrw x0, 0xbda, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR10 {}
+impl self::common::CSR for CSR_PMAADDR10 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr11() -> crate::common::Reg<u32, CSR_PMAADDR11, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr11() -> self::common::Reg<u32, CSR_PMAADDR11, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR11;
-impl crate::common::SealedCSR for CSR_PMAADDR11 {
+impl self::common::SealedCSR for CSR_PMAADDR11 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1656,16 +1653,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR11 {
         core :: arch :: asm ! ("csrrw x0, 0xbdb, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR11 {}
+impl self::common::CSR for CSR_PMAADDR11 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr12() -> crate::common::Reg<u32, CSR_PMAADDR12, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr12() -> self::common::Reg<u32, CSR_PMAADDR12, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR12;
-impl crate::common::SealedCSR for CSR_PMAADDR12 {
+impl self::common::SealedCSR for CSR_PMAADDR12 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1677,16 +1674,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR12 {
         core :: arch :: asm ! ("csrrw x0, 0xbdc, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR12 {}
+impl self::common::CSR for CSR_PMAADDR12 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr13() -> crate::common::Reg<u32, CSR_PMAADDR13, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr13() -> self::common::Reg<u32, CSR_PMAADDR13, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR13;
-impl crate::common::SealedCSR for CSR_PMAADDR13 {
+impl self::common::SealedCSR for CSR_PMAADDR13 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1698,16 +1695,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR13 {
         core :: arch :: asm ! ("csrrw x0, 0xbdd, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR13 {}
+impl self::common::CSR for CSR_PMAADDR13 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr14() -> crate::common::Reg<u32, CSR_PMAADDR14, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr14() -> self::common::Reg<u32, CSR_PMAADDR14, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR14;
-impl crate::common::SealedCSR for CSR_PMAADDR14 {
+impl self::common::SealedCSR for CSR_PMAADDR14 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1719,16 +1716,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR14 {
         core :: arch :: asm ! ("csrrw x0, 0xbde, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR14 {}
+impl self::common::CSR for CSR_PMAADDR14 {}
 #[doc = "PMA address"]
 #[inline(always)]
-pub const fn pmaaddr15() -> crate::common::Reg<u32, CSR_PMAADDR15, crate::common::RW> {
-    unsafe { crate::common::Reg::new() }
+pub const fn pmaaddr15() -> self::common::Reg<u32, CSR_PMAADDR15, self::common::RW> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_PMAADDR15;
-impl crate::common::SealedCSR for CSR_PMAADDR15 {
+impl self::common::SealedCSR for CSR_PMAADDR15 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1740,16 +1737,16 @@ impl crate::common::SealedCSR for CSR_PMAADDR15 {
         core :: arch :: asm ! ("csrrw x0, 0xbdf, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_PMAADDR15 {}
+impl self::common::CSR for CSR_PMAADDR15 {}
 #[doc = "Instruction cache/memory configuration"]
 #[inline(always)]
-pub const fn micm_cfg() -> crate::common::Reg<regs::MicmCfg, CSR_MICM_CFG, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn micm_cfg() -> self::common::Reg<regs::MicmCfg, CSR_MICM_CFG, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MICM_CFG;
-impl crate::common::SealedCSR for CSR_MICM_CFG {
+impl self::common::SealedCSR for CSR_MICM_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1761,16 +1758,16 @@ impl crate::common::SealedCSR for CSR_MICM_CFG {
         core :: arch :: asm ! ("csrrw x0, 0xfc0, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MICM_CFG {}
+impl self::common::CSR for CSR_MICM_CFG {}
 #[doc = "Data cache/memory configuration"]
 #[inline(always)]
-pub const fn mdcm_cfg() -> crate::common::Reg<regs::MdcmCfg, CSR_MDCM_CFG, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mdcm_cfg() -> self::common::Reg<regs::MdcmCfg, CSR_MDCM_CFG, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MDCM_CFG;
-impl crate::common::SealedCSR for CSR_MDCM_CFG {
+impl self::common::SealedCSR for CSR_MDCM_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1782,16 +1779,16 @@ impl crate::common::SealedCSR for CSR_MDCM_CFG {
         core :: arch :: asm ! ("csrrw x0, 0xfc1, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MDCM_CFG {}
+impl self::common::CSR for CSR_MDCM_CFG {}
 #[doc = "Miscellaneous configuration"]
 #[inline(always)]
-pub const fn mmsc_cfg() -> crate::common::Reg<regs::MmscCfg, CSR_MMSC_CFG, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mmsc_cfg() -> self::common::Reg<regs::MmscCfg, CSR_MMSC_CFG, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MMSC_CFG;
-impl crate::common::SealedCSR for CSR_MMSC_CFG {
+impl self::common::SealedCSR for CSR_MMSC_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1803,16 +1800,16 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG {
         core :: arch :: asm ! ("csrrw x0, 0xfc2, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MMSC_CFG {}
+impl self::common::CSR for CSR_MMSC_CFG {}
 #[doc = "Miscellaneous configuration (RV32)"]
 #[inline(always)]
-pub const fn mmsc_cfg2() -> crate::common::Reg<regs::MmscCfg2, CSR_MMSC_CFG2, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mmsc_cfg2() -> self::common::Reg<regs::MmscCfg2, CSR_MMSC_CFG2, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MMSC_CFG2;
-impl crate::common::SealedCSR for CSR_MMSC_CFG2 {
+impl self::common::SealedCSR for CSR_MMSC_CFG2 {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1824,16 +1821,16 @@ impl crate::common::SealedCSR for CSR_MMSC_CFG2 {
         core :: arch :: asm ! ("csrrw x0, 0xfc3, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MMSC_CFG2 {}
+impl self::common::CSR for CSR_MMSC_CFG2 {}
 #[doc = "Vector processor configuration"]
 #[inline(always)]
-pub const fn mvec_cfg() -> crate::common::Reg<regs::MvecCfg, CSR_MVEC_CFG, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mvec_cfg() -> self::common::Reg<regs::MvecCfg, CSR_MVEC_CFG, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MVEC_CFG;
-impl crate::common::SealedCSR for CSR_MVEC_CFG {
+impl self::common::SealedCSR for CSR_MVEC_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1845,17 +1842,17 @@ impl crate::common::SealedCSR for CSR_MVEC_CFG {
         core :: arch :: asm ! ("csrrw x0, 0xfc7, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MVEC_CFG {}
+impl self::common::CSR for CSR_MVEC_CFG {}
 #[doc = "Current state save for crash debugging"]
 #[inline(always)]
 pub const fn mcrash_statesave(
-) -> crate::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+) -> self::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCRASH_STATESAVE;
-impl crate::common::SealedCSR for CSR_MCRASH_STATESAVE {
+impl self::common::SealedCSR for CSR_MCRASH_STATESAVE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1867,17 +1864,16 @@ impl crate::common::SealedCSR for CSR_MCRASH_STATESAVE {
         core :: arch :: asm ! ("csrrw x0, 0xfc8, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCRASH_STATESAVE {}
+impl self::common::CSR for CSR_MCRASH_STATESAVE {}
 #[doc = "mstatus state save for crash debugging"]
 #[inline(always)]
-pub const fn mstatus_crashsave() -> crate::common::Reg<u32, CSR_MSTATUS_CRASHSAVE, crate::common::R>
-{
-    unsafe { crate::common::Reg::new() }
+pub const fn mstatus_crashsave() -> self::common::Reg<u32, CSR_MSTATUS_CRASHSAVE, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MSTATUS_CRASHSAVE;
-impl crate::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
+impl self::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1889,17 +1885,17 @@ impl crate::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
         core :: arch :: asm ! ("csrrw x0, 0xfc9, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MSTATUS_CRASHSAVE {}
+impl self::common::CSR for CSR_MSTATUS_CRASHSAVE {}
 #[doc = "RISC-V Architecture"]
 #[inline(always)]
-pub const fn mrvarch_cfg() -> crate::common::Reg<regs::MrvarchCfg, CSR_MRVARCH_CFG, crate::common::R>
+pub const fn mrvarch_cfg() -> self::common::Reg<regs::MrvarchCfg, CSR_MRVARCH_CFG, self::common::R>
 {
-    unsafe { crate::common::Reg::new() }
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MRVARCH_CFG;
-impl crate::common::SealedCSR for CSR_MRVARCH_CFG {
+impl self::common::SealedCSR for CSR_MRVARCH_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1911,16 +1907,16 @@ impl crate::common::SealedCSR for CSR_MRVARCH_CFG {
         core :: arch :: asm ! ("csrrw x0, 0xfca, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MRVARCH_CFG {}
+impl self::common::CSR for CSR_MRVARCH_CFG {}
 #[doc = "Cluster cache control base address"]
 #[inline(always)]
-pub const fn mccache_ctl_base() -> crate::common::Reg<u32, CSR_MCCACHE_CTL_BASE, crate::common::R> {
-    unsafe { crate::common::Reg::new() }
+pub const fn mccache_ctl_base() -> self::common::Reg<u32, CSR_MCCACHE_CTL_BASE, self::common::R> {
+    unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
 #[doc(hidden)]
 pub struct CSR_MCCACHE_CTL_BASE;
-impl crate::common::SealedCSR for CSR_MCCACHE_CTL_BASE {
+impl self::common::SealedCSR for CSR_MCCACHE_CTL_BASE {
     #[inline]
     unsafe fn read_csr() -> usize {
         let r: usize;
@@ -1932,7 +1928,92 @@ impl crate::common::SealedCSR for CSR_MCCACHE_CTL_BASE {
         core :: arch :: asm ! ("csrrw x0, 0xfcf, {0}" , in (reg) value);
     }
 }
-impl crate::common::CSR for CSR_MCCACHE_CTL_BASE {}
+impl self::common::CSR for CSR_MCCACHE_CTL_BASE {}
+
+pub mod common {
+    #![allow(private_bounds)]
+    use core::marker::PhantomData;
+    #[derive(Copy, Clone, PartialEq, Eq)]
+    pub struct RW;
+    #[derive(Copy, Clone, PartialEq, Eq)]
+    pub struct R;
+    #[derive(Copy, Clone, PartialEq, Eq)]
+    pub struct W;
+    trait SealedAccess {}
+    impl SealedAccess for R {}
+    impl SealedAccess for W {}
+    impl SealedAccess for RW {}
+
+    pub trait Access: SealedAccess + Copy {}
+    impl Access for R {}
+    impl Access for W {}
+    impl Access for RW {}
+    pub trait Read: Access {}
+    impl Read for RW {}
+    impl Read for R {}
+    pub trait Write: Access {}
+    impl Write for RW {}
+    impl Write for W {}
+    pub(crate) trait SealedCSR {
+        unsafe fn read_csr() -> usize;
+        unsafe fn write_csr(value: usize);
+    }
+    pub trait CSR: SealedCSR {}
+    #[derive(Copy, Clone, PartialEq, Eq)]
+    pub struct Reg<T: Copy, C: CSR, A: Access> {
+        phantom: PhantomData<*mut (T, C, A)>,
+    }
+    unsafe impl<T: Copy, C: CSR, A: Access> Send for Reg<T, C, A> {}
+    unsafe impl<T: Copy, C: CSR, A: Access> Sync for Reg<T, C, A> {}
+    impl<T: Copy, C: CSR, A: Access> Reg<T, C, A> {
+        #[allow(clippy::missing_safety_doc)]
+        #[inline(always)]
+        pub(crate) const unsafe fn new() -> Self {
+            Self {
+                phantom: PhantomData,
+            }
+        }
+    }
+    impl<T: Copy, C: CSR, A: Read> Reg<T, C, A> {
+        #[inline(always)]
+        pub fn read(&self) -> T {
+            unsafe {
+                let mut val: T = core::mem::zeroed();
+                let out = C::read_csr() as u32;
+                (&mut val as *mut T as *mut u32).write_volatile(out);
+                val
+            }
+        }
+    }
+    impl<T: Copy, C: CSR, A: Write> Reg<T, C, A> {
+        #[inline(always)]
+        pub unsafe fn write_value(&self, val: T) {
+            let mut new_val: u32 = 0;
+            unsafe {
+                (&mut new_val as *mut u32 as *mut T).write_volatile(val);
+                C::write_csr(new_val as usize)
+            }
+        }
+    }
+    impl<T: Default + Copy, C: CSR, A: Write> Reg<T, C, A> {
+        #[inline(always)]
+        pub unsafe fn write<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
+            let mut val = Default::default();
+            let res = f(&mut val);
+            self.write_value(val);
+            res
+        }
+    }
+    impl<T: Copy, C: CSR, A: Read + Write> Reg<T, C, A> {
+        #[inline(always)]
+        pub unsafe fn modify<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
+            let mut val = self.read();
+            let res = f(&mut val);
+            self.write_value(val);
+            res
+        }
+    }
+}
 pub mod regs {
     #[doc = "Debug Detailed Cause Register"]
     #[repr(transparent)]
