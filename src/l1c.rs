@@ -47,6 +47,7 @@ pub fn ic_is_enabled() -> bool {
     register::mcache_ctl().read().ic_en()
 }
 
+#[inline(always)]
 pub unsafe fn dc_enable() {
     if !dc_is_enabled() {
         register::mcache_ctl().modify(|w| w.set_dc_warnd(0b11));
@@ -58,12 +59,14 @@ pub unsafe fn dc_enable() {
     }
 }
 
+#[inline(always)]
 pub unsafe fn dc_disable() {
     if dc_is_enabled() {
         register::mcache_ctl().modify(|w| w.set_dc_en(false));
     }
 }
 
+#[inline(always)]
 pub unsafe fn ic_enable() {
     if !ic_is_enabled() {
         register::mcache_ctl().modify(|w| {
@@ -74,20 +77,24 @@ pub unsafe fn ic_enable() {
     }
 }
 
+#[inline(always)]
 pub unsafe fn ic_disable() {
     if ic_is_enabled() {
         register::mcache_ctl().modify(|w| w.set_ic_en(false));
     }
 }
 
+#[inline(always)]
 pub unsafe fn dc_invalidate_all() {
     register::mcctlcommand().write_value(cctl_cmds::L1D_INVAL_ALL as u32);
 }
 
+#[inline(always)]
 pub unsafe fn dc_writeback_all() {
     register::mcctlcommand().write_value(cctl_cmds::L1D_WB_ALL as u32);
 }
 
+#[inline(always)]
 pub unsafe fn dc_flush_all() {
     register::mcctlcommand().write_value(cctl_cmds::L1D_WBINVAL_ALL as u32);
 }
