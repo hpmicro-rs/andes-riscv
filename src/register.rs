@@ -4245,42 +4245,42 @@ pub mod regs {
             Mxstatus(0)
         }
     }
-    #[doc = "PMA Configuration Register 0"]
+    #[doc = "PMA Configuration Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Pmacfg(pub u32);
     impl Pmacfg {
-        #[doc = "Event Type"]
+        #[doc = "Entry address matching mode."]
         #[inline(always)]
-        pub const fn etyp(&self, n: usize) -> u8 {
+        pub const fn etyp(&self, n: usize) -> super::vals::EntryType {
             assert!(n < 4usize);
             let offs = 0usize + n * 4usize;
             let val = (self.0 >> offs) & 0x03;
-            val as u8
+            super::vals::EntryType::from_bits(val as u8)
         }
-        #[doc = "Event Type"]
+        #[doc = "Entry address matching mode."]
         #[inline(always)]
-        pub fn set_etyp(&mut self, n: usize, val: u8) {
+        pub fn set_etyp(&mut self, n: usize, val: super::vals::EntryType) {
             assert!(n < 4usize);
             let offs = 0usize + n * 4usize;
-            self.0 = (self.0 & !(0x03 << offs)) | (((val as u32) & 0x03) << offs);
+            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
         }
-        #[doc = "Memory Type"]
+        #[doc = "Memory type attribute"]
         #[inline(always)]
-        pub const fn mtyp(&self, n: usize) -> u8 {
+        pub const fn mtyp(&self, n: usize) -> super::vals::MemoryType {
             assert!(n < 4usize);
             let offs = 2usize + n * 4usize;
             let val = (self.0 >> offs) & 0x0f;
-            val as u8
+            super::vals::MemoryType::from_bits(val as u8)
         }
-        #[doc = "Memory Type"]
+        #[doc = "Memory type attribute"]
         #[inline(always)]
-        pub fn set_mtyp(&mut self, n: usize, val: u8) {
+        pub fn set_mtyp(&mut self, n: usize, val: super::vals::MemoryType) {
             assert!(n < 4usize);
             let offs = 2usize + n * 4usize;
-            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
+            self.0 = (self.0 & !(0x0f << offs)) | (((val.to_bits() as u32) & 0x0f) << offs);
         }
-        #[doc = "Naturally Aligned Memory Operation"]
+        #[doc = "Indicate whether Atomic Memory Operation instructions (including LR/SC) are not supported in this region"]
         #[inline(always)]
         pub const fn namo(&self, n: usize) -> bool {
             assert!(n < 4usize);
@@ -4288,7 +4288,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Naturally Aligned Memory Operation"]
+        #[doc = "Indicate whether Atomic Memory Operation instructions (including LR/SC) are not supported in this region"]
         #[inline(always)]
         pub fn set_namo(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
@@ -4686,6 +4686,93 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Aces) -> u8 {
             Aces::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[allow(non_camel_case_types)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum EntryType {
+        #[doc = "This PMA entry is disabled"]
+        OFF = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "Naturally aligned power-of-2 region. The granularity is 4K bytes."]
+        NAPOT = 0x03,
+    }
+    impl EntryType {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> EntryType {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for EntryType {
+        #[inline(always)]
+        fn from(val: u8) -> EntryType {
+            EntryType::from_bits(val)
+        }
+    }
+    impl From<EntryType> for u8 {
+        #[inline(always)]
+        fn from(val: EntryType) -> u8 {
+            EntryType::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[allow(non_camel_case_types)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub enum MemoryType {
+        #[doc = "Device memory, non-bufferable"]
+        DEV_NON_BUF = 0x0,
+        #[doc = "Device memory, bufferable"]
+        DEV_BUF = 0x01,
+        #[doc = "Normal memory, non-cacheable, non-bufferable"]
+        MEM_NON_CACHE_NON_BUF = 0x02,
+        #[doc = "Normal memory, non-cacheable, bufferable"]
+        MEM_NON_CACHE_BUF = 0x03,
+        #[doc = "Normal memory, write-through, no allocate"]
+        MEM_WT_NO_ALLOC = 0x04,
+        #[doc = "Normal memory, write-through, read allocate"]
+        MEM_WT_READ_ALLOC = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        #[doc = "Normal memory, write-back, no allocate"]
+        MEM_WB_NO_ALLOC = 0x08,
+        #[doc = "Normal memory, write-back, read allocate"]
+        MEM_WB_READ_ALLOC = 0x09,
+        #[doc = "Normal memory, write-back, write allocate"]
+        MEM_WB_WRITE_ALLOC = 0x0a,
+        #[doc = "Normal memory, write-back, read and write allocate"]
+        MEM_WB_READ_WRITE_ALLOC = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        #[doc = "Empty hole"]
+        EMPTY_HOLE = 0x0f,
+    }
+    impl MemoryType {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> MemoryType {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for MemoryType {
+        #[inline(always)]
+        fn from(val: u8) -> MemoryType {
+            MemoryType::from_bits(val)
+        }
+    }
+    impl From<MemoryType> for u8 {
+        #[inline(always)]
+        fn from(val: MemoryType) -> u8 {
+            MemoryType::to_bits(val)
         }
     }
 }

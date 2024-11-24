@@ -1243,24 +1243,26 @@ fieldset/MCOUNTER_COMMON:
         stride: 1
         start_index: 3 # TODO, support this
 fieldset/PMACFG:
-  description: PMA Configuration Register 0
+  description: PMA Configuration Register
   fields:
     - name: ETYP
-      description: Event Type
+      description: Entry address matching mode
       bit_offset: 0
       bit_size: 2
       array:
         len: 4
         stride: 4
+      enum: EntryType
     - name: MTYP
-      description: Memory Type
+      description: Memory type attribute
       bit_offset: 2
       bit_size: 4
       array:
         len: 4
         stride: 4
+      enum: MemoryType
     - name: NAMO
-      description: Naturally Aligned Memory Operation
+      description: Indicate whether Atomic Memory Operation instructions (including LR/SC) are not supported in this region
       bit_offset: 6
       bit_size: 1
       array:
@@ -1400,3 +1402,58 @@ fieldset/TXEVT:
       description: Event output
       bit_offset: 0
       bit_size: 1
+enum/EntryType:
+  bit_size: 2
+  variants:
+    - name: OFF
+      description: This PMA entry is disabled
+      value: 0
+    - name: NAPOT
+      description: Naturally aligned power-of-2 region. The granularity is 4K bytes.
+      value: 3
+enum/MemoryType:
+  bit_size: 4
+  variants:
+    - name: DEV_NON_BUF
+      description: Device memory, non-bufferable
+      value: 0
+    - name: DEV_BUF
+      description: Device memory, bufferable
+      value: 1
+    - name: MEM_NON_CACHE_NON_BUF
+      description: Normal memory, non-cacheable, non-bufferable
+      value: 2
+    - name: MEM_NON_CACHE_BUF
+      description: Normal memory, non-cacheable, bufferable
+      value: 3
+    - name: MEM_WT_NO_ALLOC
+      description: Normal memory, write-through, no allocate
+      value: 4
+    - name: MEM_WT_READ_ALLOC
+      description: Normal memory, write-through, read allocate
+      value: 5
+    - name: MEM_WB_NO_ALLOC
+      description: Normal memory, write-back, no allocate
+      value: 8
+    - name: MEM_WB_READ_ALLOC
+      description: Normal memory, write-back, read allocate
+      value: 9
+    - name: MEM_WB_WRITE_ALLOC
+      description: Normal memory, write-back, write allocate
+      value: 10
+    - name: MEM_WB_READ_WRITE_ALLOC
+      description: Normal memory, write-back, read and write allocate
+      value: 11
+    - name: EMPTY_HOLE
+      description: Empty hole
+      value: 15
+#define MEM_TYPE_DEV_BUF (1U)
+#define MEM_TYPE_MEM_NON_CACHE_NON_BUF (2U)
+#define MEM_TYPE_MEM_NON_CACHE_BUF (3U)
+#define MEM_TYPE_MEM_WT_NO_ALLOC (4U)
+#define MEM_TYPE_MEM_WT_READ_ALLOC (5U)
+#define MEM_TYPE_MEM_WB_NO_ALLOC (8U)
+#define MEM_TYPE_MEM_WB_READ_ALLOC (9U)
+#define MEM_TYPE_MEM_WB_WRITE_ALLOC (10U)
+#define MEM_TYPE_MEM_WB_READ_WRITE_ALLOC (11U)
+#define MEM_TYPE_EMPTY_HOLE (15U)
