@@ -452,170 +452,170 @@ fieldset/MMSC_CFG:
   description: Misc. Configuration Register
   fields:
     - name: ECC
-      description:
+      description: Global configuration for parity/ECC support
       bit_offset: 0
       bit_size: 1
     - name: TLB_ECC
-      description:
+      description: TLB parity/ECC support configuration
       bit_offset: 1
       bit_size: 2
     - name: ECD
-      description:
+      description: Indicates whether CodeDense extension is supported or not
       bit_offset: 3
       bit_size: 1
     - name: PFT
-      description:
+      description: Indicates if the PowerBrake (Performance Throttling) feature exists or not
       bit_offset: 4
       bit_size: 1
     - name: HSP
-      description:
+      description: Indicates if the HW Stack protection and recording mechanism exists or not
       bit_offset: 5
       bit_size: 1
     - name: ACE
-      description:
+      description: Indicates if Andes Custom Extension exists or not
       bit_offset: 6
       bit_size: 1
     - name: ADDPMC
-      description:
+      description: Indicates the number of additional PM counters from counter3 to counter31
       bit_offset: 7
       bit_size: 5
     - name: VPLIC
-      description:
+      description: Indicates if vectored PLIC mode is supported or not
       bit_offset: 12
       bit_size: 1
     - name: EV5PE
-      description:
+      description: Indicates whether Andes V5 performance extension is supported or not
       bit_offset: 13
       bit_size: 1
     - name: LMSLVP
-      description:
+      description: Indicate if local memory slave port is present or not
       bit_offset: 14
       bit_size: 1
     - name: PMNDS
-      description:
+      description: Indicate if Andes-enhanced performance monitoring feature is present or not
       bit_offset: 15
       bit_size: 1
     - name: CCTLCSR
-      description:
+      description: Indicate the presence of CSRs for CCTL operations
       bit_offset: 16
       bit_size: 1
     - name: EFHW
-      description:
+      description: Indicate the support of FLHW and FSHW instructions
       bit_offset: 17
       bit_size: 1
     - name: VCCTL
-      description:
+      description: Indicates the version number of CCTL command operation scheme supported by an implementation
       bit_offset: 18
       bit_size: 2
     - name: EXCSLVL
-      description:
+      description: Exception additional save levels for recoverable exception/NMI
       bit_offset: 20
       bit_size: 2
     - name: NOPMC
-      description:
+      description: Indicates if Performance Monitoring Counters are implemented or not
       bit_offset: 22
       bit_size: 1
     - name: SPE_AFT
-      description:
+      description: Indicates if the stack overflow/underflow exception is implemented as a “before” precise exception or an “after” precise exception
       bit_offset: 23
       bit_size: 1
     - name: ESLEEP
-      description:
+      description: Indicates if wfe, sleepvalue, txevt CSRs are implemented or not
       bit_offset: 24
       bit_size: 1
     - name: PPI
-      description:
+      description: Indicates if PPI region is supported or not
       bit_offset: 25
       bit_size: 1
     - name: FIO
-      description:
+      description: Indicates if FIO region is supported or not
       bit_offset: 26
       bit_size: 1
     - name: CLIC
-      description:
+      description: Indicates if CLIC (Core Local Interrupt Controller) is supported or not
       bit_offset: 27
       bit_size: 1
     - name: ECLIC
-      description:
+      description: Indicates if Enhnaced CLIC (Core Local Interrupt Controller) extension is supported or not
       bit_offset: 28
       bit_size: 1
     - name: EDSP
-      description:
+      description: Indicates if DSP extension is supported or not
       bit_offset: 29
       bit_size: 1
     - name: PPMA
-      description:
+      description: Indicates if programmable PMA mechanism with PMA region CSRs is supported or not
       bit_offset: 30
       bit_size: 1
     - name: MSC_EXT
-      description:
+      description: Indicates if mmsc_cfg2 CSR is present or not
       bit_offset: 31
       bit_size: 1
 fieldset/MMSC_CFG2:
   description: Misc. Configuration 2 Register
   fields:
     - name: BF16CVT
-      description:
+      description: Indicates if BFLOAT16 conversion extension is supported or not
       bit_offset: 0
       bit_size: 1
     - name: ZFH
-      description:
+      description: Indicates if FP16 half-precision floating-point extension (Zfh) is supported or not
       bit_offset: 1
       bit_size: 1
     - name: VL4
-      description:
+      description: Indicates if vector INT4 load extension is supported or not
       bit_offset: 2
       bit_size: 1
     - name: CRASHSAVE
-      description:
+      description: Indicates if crash debugging state save feature is supported or not
       bit_offset: 3
       bit_size: 1
     - name: VECCFG
-      description:
+      description: Indicates if mvec_cfg CSR is present or not
       bit_offset: 4
       bit_size: 1
     - name: FINV
-      description:
+      description: Indicates if scalar FPU is implemented using VPU-like pipeline
       bit_offset: 5
       bit_size: 1
     - name: PP16
-      description:
+      description: Indicates if 16-bit push/pop/popret instructions are supported or not
       bit_offset: 6
       bit_size: 1
     - name: VSIH
-      description:
+      description: Indicates if vector small INT handling extension is supported or not
       bit_offset: 8
       bit_size: 1
     - name: ECDV
-      description:
+      description: Version of Code Dense Extension
       bit_offset: 9
       bit_size: 2
     - name: VDOT
-      description:
+      description: Indicates if vector dot product extension is supported or not
       bit_offset: 11
       bit_size: 1
     - name: VPFH
-      description:
+      description: Indicates if vector packed FP16 extension is supported or not. VFPMADT.VF and VFPMADB.VF
       bit_offset: 12
       bit_size: 1
     - name: CCACHEMP_CFG
-      description:
+      description: Indicates if CCACHE/MP configuration info is implemented or not. It includes the fields of CCACHE, IO_COHP, CORE_PCLUS, and mccache_ctl_base CSR
       bit_offset: 13
       bit_size: 1
     - name: CCACHE
-      description:
+      description: Indicates if cluster cache is present or not
       bit_offset: 14
       bit_size: 1
     - name: IO_COHP
-      description:
+      description: Indicates if IO coherence port is present or not
       bit_offset: 15
       bit_size: 1
     - name: CORE_PCLUS
-      description:
+      description: Indicates the number of cores in a MP cluster. The number of cores is equal to “CORE_PCLUS+1”
       bit_offset: 16
       bit_size: 4
     - name: RVARCH
-      description:
+      description: Indicates if mrvarch_cfg CSR is present or not
       bit_offset: 20
       bit_size: 1
 fieldset/MCRASH_STATESAVE:
