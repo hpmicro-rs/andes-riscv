@@ -14,13 +14,17 @@ pub struct CSR_MILMB;
 impl self::common::SealedCSR for CSR_MILMB {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MILMB {}
@@ -35,13 +39,17 @@ pub struct CSR_MDLMB;
 impl self::common::SealedCSR for CSR_MDLMB {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MDLMB {}
@@ -56,13 +64,17 @@ pub struct CSR_MECC_CODE;
 impl self::common::SealedCSR for CSR_MECC_CODE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c2, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c2, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c2, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c2, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MECC_CODE {}
@@ -77,13 +89,17 @@ pub struct CSR_MNVEC;
 impl self::common::SealedCSR for CSR_MNVEC {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MNVEC {}
@@ -98,13 +114,17 @@ pub struct CSR_MXSTATUS;
 impl self::common::SealedCSR for CSR_MXSTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MXSTATUS {}
@@ -119,13 +139,17 @@ pub struct CSR_MPFT_CTL;
 impl self::common::SealedCSR for CSR_MPFT_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c5, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c5, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c5, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c5, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MPFT_CTL {}
@@ -140,13 +164,17 @@ pub struct CSR_MHSP_CTL;
 impl self::common::SealedCSR for CSR_MHSP_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c6, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c6, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c6, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c6, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MHSP_CTL {}
@@ -161,13 +189,17 @@ pub struct CSR_MSP_BOUND;
 impl self::common::SealedCSR for CSR_MSP_BOUND {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c7, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c7, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c7, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c7, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSP_BOUND {}
@@ -182,13 +214,17 @@ pub struct CSR_MSP_BASE;
 impl self::common::SealedCSR for CSR_MSP_BASE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c8, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c8, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c8, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c8, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSP_BASE {}
@@ -203,13 +239,17 @@ pub struct CSR_MDCAUSE;
 impl self::common::SealedCSR for CSR_MDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7c9, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7c9, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7c9, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7c9, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MDCAUSE {}
@@ -224,13 +264,17 @@ pub struct CSR_MCACHE_CTL;
 impl self::common::SealedCSR for CSR_MCACHE_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ca, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ca, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ca, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ca, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCACHE_CTL {}
@@ -245,13 +289,17 @@ pub struct CSR_MCCTLBEGINADDR;
 impl self::common::SealedCSR for CSR_MCCTLBEGINADDR {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7cb, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7cb, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7cb, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7cb, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCCTLBEGINADDR {}
@@ -266,13 +314,17 @@ pub struct CSR_MCCTLCOMMAND;
 impl self::common::SealedCSR for CSR_MCCTLCOMMAND {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7cc, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7cc, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7cc, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7cc, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCCTLCOMMAND {}
@@ -287,20 +339,24 @@ pub struct CSR_MCCTLDATA;
 impl self::common::SealedCSR for CSR_MCCTLDATA {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7cd, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7cd, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7cd, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7cd, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCCTLDATA {}
 #[doc = "Counter write enable"]
 #[inline(always)]
-pub const fn mcounterwen(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERWEN, self::common::RW> {
+pub const fn mcounterwen()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERWEN, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -309,20 +365,24 @@ pub struct CSR_MCOUNTERWEN;
 impl self::common::SealedCSR for CSR_MCOUNTERWEN {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ce, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ce, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ce, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ce, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTERWEN {}
 #[doc = "Counter overflow interrupt enable"]
 #[inline(always)]
-pub const fn mcounterinten(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERINTEN, self::common::RW> {
+pub const fn mcounterinten()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERINTEN, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -331,13 +391,17 @@ pub struct CSR_MCOUNTERINTEN;
 impl self::common::SealedCSR for CSR_MCOUNTERINTEN {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7cf, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7cf, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7cf, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7cf, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTERINTEN {}
@@ -352,20 +416,24 @@ pub struct CSR_MMISC_CTL;
 impl self::common::SealedCSR for CSR_MMISC_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MMISC_CTL {}
 #[doc = "Counter not counting in M-mode"]
 #[inline(always)]
-pub const fn mcountermask_m(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_M, self::common::RW> {
+pub const fn mcountermask_m()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_M, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -374,20 +442,24 @@ pub struct CSR_MCOUNTERMASK_M;
 impl self::common::SealedCSR for CSR_MCOUNTERMASK_M {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTERMASK_M {}
 #[doc = "Counter not counting in S-mode"]
 #[inline(always)]
-pub const fn mcountermask_s(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_S, self::common::RW> {
+pub const fn mcountermask_s()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_S, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -396,20 +468,24 @@ pub struct CSR_MCOUNTERMASK_S;
 impl self::common::SealedCSR for CSR_MCOUNTERMASK_S {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d2, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d2, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d2, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d2, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTERMASK_S {}
 #[doc = "Counter not counting in U-mode"]
 #[inline(always)]
-pub const fn mcountermask_u(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_U, self::common::RW> {
+pub const fn mcountermask_u()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTERMASK_U, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -418,20 +494,24 @@ pub struct CSR_MCOUNTERMASK_U;
 impl self::common::SealedCSR for CSR_MCOUNTERMASK_U {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTERMASK_U {}
 #[doc = "Counter overflow status"]
 #[inline(always)]
-pub const fn mcounterovf(
-) -> self::common::Reg<regs::McounterCommon, CSR_MCOUNTEROVF, self::common::RW> {
+pub const fn mcounterovf()
+-> self::common::Reg<regs::McounterCommon, CSR_MCOUNTEROVF, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -440,13 +520,17 @@ pub struct CSR_MCOUNTEROVF;
 impl self::common::SealedCSR for CSR_MCOUNTEROVF {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCOUNTEROVF {}
@@ -461,13 +545,17 @@ pub struct CSR_MSLIDELEG;
 impl self::common::SealedCSR for CSR_MSLIDELEG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d5, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d5, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d5, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d5, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSLIDELEG {}
@@ -483,13 +571,17 @@ pub struct CSR_MSAVESTATUS;
 impl self::common::SealedCSR for CSR_MSAVESTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d6, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d6, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d6, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d6, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVESTATUS {}
@@ -504,13 +596,17 @@ pub struct CSR_MSAVEEPC1;
 impl self::common::SealedCSR for CSR_MSAVEEPC1 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d7, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d7, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d7, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d7, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVEEPC1 {}
@@ -525,13 +621,17 @@ pub struct CSR_MSAVECAUSE1;
 impl self::common::SealedCSR for CSR_MSAVECAUSE1 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d8, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d8, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d8, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d8, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVECAUSE1 {}
@@ -546,13 +646,17 @@ pub struct CSR_MSAVEEPC2;
 impl self::common::SealedCSR for CSR_MSAVEEPC2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7d9, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7d9, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7d9, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7d9, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVEEPC2 {}
@@ -567,13 +671,17 @@ pub struct CSR_MSAVECAUSE2;
 impl self::common::SealedCSR for CSR_MSAVECAUSE2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7da, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7da, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7da, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7da, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVECAUSE2 {}
@@ -588,13 +696,17 @@ pub struct CSR_MSAVEDCAUSE1;
 impl self::common::SealedCSR for CSR_MSAVEDCAUSE1 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7db, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7db, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7db, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7db, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVEDCAUSE1 {}
@@ -609,13 +721,17 @@ pub struct CSR_MSAVEDCAUSE2;
 impl self::common::SealedCSR for CSR_MSAVEDCAUSE2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7dc, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7dc, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7dc, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7dc, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSAVEDCAUSE2 {}
@@ -630,13 +746,17 @@ pub struct CSR_MCLK_CTL;
 impl self::common::SealedCSR for CSR_MCLK_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7df, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7df, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7df, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7df, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCLK_CTL {}
@@ -651,13 +771,17 @@ pub struct CSR_DEXC2DBG;
 impl self::common::SealedCSR for CSR_DEXC2DBG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7e0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7e0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7e0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7e0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_DEXC2DBG {}
@@ -672,13 +796,17 @@ pub struct CSR_DDCAUSE;
 impl self::common::SealedCSR for CSR_DDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7e1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7e1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7e1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7e1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_DDCAUSE {}
@@ -693,13 +821,17 @@ pub struct CSR_PUSHMXSTATUS;
 impl self::common::SealedCSR for CSR_PUSHMXSTATUS {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7eb, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7eb, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7eb, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7eb, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PUSHMXSTATUS {}
@@ -714,13 +846,17 @@ pub struct CSR_MIRQ_ENTRY;
 impl self::common::SealedCSR for CSR_MIRQ_ENTRY {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ec, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ec, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ec, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ec, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MIRQ_ENTRY {}
@@ -735,13 +871,17 @@ pub struct CSR_MINTSEL_JAL;
 impl self::common::SealedCSR for CSR_MINTSEL_JAL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ed, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ed, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ed, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ed, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MINTSEL_JAL {}
@@ -756,13 +896,17 @@ pub struct CSR_PUSHMCAUSE;
 impl self::common::SealedCSR for CSR_PUSHMCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ee, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ee, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ee, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ee, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PUSHMCAUSE {}
@@ -777,13 +921,17 @@ pub struct CSR_PUSHMEPC;
 impl self::common::SealedCSR for CSR_PUSHMEPC {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7ef, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7ef, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7ef, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7ef, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PUSHMEPC {}
@@ -798,13 +946,17 @@ pub struct CSR_MPPIB;
 impl self::common::SealedCSR for CSR_MPPIB {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7f0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7f0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7f0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7f0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MPPIB {}
@@ -819,13 +971,17 @@ pub struct CSR_MFIOB;
 impl self::common::SealedCSR for CSR_MFIOB {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x7f1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x7f1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x7f1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x7f1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MFIOB {}
@@ -840,13 +996,17 @@ pub struct CSR_UITB;
 impl self::common::SealedCSR for CSR_UITB {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x800, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x800, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x800, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x800, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_UITB {}
@@ -861,13 +1021,17 @@ pub struct CSR_UCODE;
 impl self::common::SealedCSR for CSR_UCODE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x801, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x801, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x801, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x801, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_UCODE {}
@@ -882,13 +1046,17 @@ pub struct CSR_UDCAUSE;
 impl self::common::SealedCSR for CSR_UDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x809, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x809, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x809, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x809, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_UDCAUSE {}
@@ -903,13 +1071,17 @@ pub struct CSR_UCCTLBEGINADDR;
 impl self::common::SealedCSR for CSR_UCCTLBEGINADDR {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x80b, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x80b, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x80b, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x80b, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_UCCTLBEGINADDR {}
@@ -924,13 +1096,17 @@ pub struct CSR_UCCTLCOMMAND;
 impl self::common::SealedCSR for CSR_UCCTLCOMMAND {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x80c, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x80c, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x80c, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x80c, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_UCCTLCOMMAND {}
@@ -945,13 +1121,17 @@ pub struct CSR_WFE;
 impl self::common::SealedCSR for CSR_WFE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x810, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x810, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x810, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x810, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_WFE {}
@@ -966,13 +1146,17 @@ pub struct CSR_SLEEPVALUE;
 impl self::common::SealedCSR for CSR_SLEEPVALUE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x811, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x811, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x811, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x811, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SLEEPVALUE {}
@@ -987,13 +1171,17 @@ pub struct CSR_TXEVT;
 impl self::common::SealedCSR for CSR_TXEVT {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x812, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x812, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x812, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x812, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_TXEVT {}
@@ -1008,13 +1196,17 @@ pub struct CSR_SLIE;
 impl self::common::SealedCSR for CSR_SLIE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9c4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9c4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9c4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9c4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SLIE {}
@@ -1029,13 +1221,17 @@ pub struct CSR_SLIP;
 impl self::common::SealedCSR for CSR_SLIP {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9c5, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9c5, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9c5, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9c5, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SLIP {}
@@ -1050,13 +1246,17 @@ pub struct CSR_SDCAUSE;
 impl self::common::SealedCSR for CSR_SDCAUSE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9c9, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9c9, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9c9, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9c9, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SDCAUSE {}
@@ -1071,20 +1271,24 @@ pub struct CSR_SCCTLDATA;
 impl self::common::SealedCSR for CSR_SCCTLDATA {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9cd, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9cd, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9cd, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9cd, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCCTLDATA {}
 #[doc = "Counter overflow interrupt enable"]
 #[inline(always)]
-pub const fn scounterinten(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERINTEN, self::common::RW> {
+pub const fn scounterinten()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERINTEN, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1093,13 +1297,17 @@ pub struct CSR_SCOUNTERINTEN;
 impl self::common::SealedCSR for CSR_SCOUNTERINTEN {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9cf, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9cf, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9cf, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9cf, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTERINTEN {}
@@ -1114,20 +1322,24 @@ pub struct CSR_SMISC_CTL;
 impl self::common::SealedCSR for CSR_SMISC_CTL {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9d0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9d0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9d0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9d0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SMISC_CTL {}
 #[doc = "Counter mask for M-mode"]
 #[inline(always)]
-pub const fn scountermask_m(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_M, self::common::RW> {
+pub const fn scountermask_m()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_M, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1136,20 +1348,24 @@ pub struct CSR_SCOUNTERMASK_M;
 impl self::common::SealedCSR for CSR_SCOUNTERMASK_M {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9d1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9d1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9d1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9d1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTERMASK_M {}
 #[doc = "Counter mask for S-mode"]
 #[inline(always)]
-pub const fn scountermask_s(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_S, self::common::RW> {
+pub const fn scountermask_s()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_S, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1158,20 +1374,24 @@ pub struct CSR_SCOUNTERMASK_S;
 impl self::common::SealedCSR for CSR_SCOUNTERMASK_S {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9d2, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9d2, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9d2, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9d2, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTERMASK_S {}
 #[doc = "Counter mask for U-mode"]
 #[inline(always)]
-pub const fn scountermask_u(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_U, self::common::RW> {
+pub const fn scountermask_u()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTERMASK_U, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1180,20 +1400,24 @@ pub struct CSR_SCOUNTERMASK_U;
 impl self::common::SealedCSR for CSR_SCOUNTERMASK_U {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9d3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9d3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9d3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9d3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTERMASK_U {}
 #[doc = "Counter overflow status"]
 #[inline(always)]
-pub const fn scounterovf(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTEROVF, self::common::RW> {
+pub const fn scounterovf()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTEROVF, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1202,20 +1426,24 @@ pub struct CSR_SCOUNTEROVF;
 impl self::common::SealedCSR for CSR_SCOUNTEROVF {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9d4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9d4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9d4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9d4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTEROVF {}
 #[doc = "Supervisor counter inhibit"]
 #[inline(always)]
-pub const fn scountinhibit(
-) -> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTINHIBIT, self::common::RW> {
+pub const fn scountinhibit()
+-> self::common::Reg<regs::ScounterCommon, CSR_SCOUNTINHIBIT, self::common::RW> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1224,13 +1452,17 @@ pub struct CSR_SCOUNTINHIBIT;
 impl self::common::SealedCSR for CSR_SCOUNTINHIBIT {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9e0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9e0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9e0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9e0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SCOUNTINHIBIT {}
@@ -1245,13 +1477,17 @@ pub struct CSR_SHPMEVENT3;
 impl self::common::SealedCSR for CSR_SHPMEVENT3 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9e3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9e3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9e3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9e3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SHPMEVENT3 {}
@@ -1266,13 +1502,17 @@ pub struct CSR_SHPMEVENT4;
 impl self::common::SealedCSR for CSR_SHPMEVENT4 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9e4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9e4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9e4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9e4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SHPMEVENT4 {}
@@ -1287,13 +1527,17 @@ pub struct CSR_SHPMEVENT5;
 impl self::common::SealedCSR for CSR_SHPMEVENT5 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9e5, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9e5, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9e5, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9e5, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SHPMEVENT5 {}
@@ -1308,13 +1552,17 @@ pub struct CSR_SHPMEVENT6;
 impl self::common::SealedCSR for CSR_SHPMEVENT6 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0x9e6, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0x9e6, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0x9e6, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0x9e6, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_SHPMEVENT6 {}
@@ -1329,13 +1577,17 @@ pub struct CSR_PMACFG0;
 impl self::common::SealedCSR for CSR_PMACFG0 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMACFG0 {}
@@ -1350,13 +1602,17 @@ pub struct CSR_PMACFG1;
 impl self::common::SealedCSR for CSR_PMACFG1 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMACFG1 {}
@@ -1371,13 +1627,17 @@ pub struct CSR_PMACFG2;
 impl self::common::SealedCSR for CSR_PMACFG2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMACFG2 {}
@@ -1392,13 +1652,17 @@ pub struct CSR_PMACFG3;
 impl self::common::SealedCSR for CSR_PMACFG3 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbc0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbc0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMACFG3 {}
@@ -1413,13 +1677,17 @@ pub struct CSR_PMAADDR0;
 impl self::common::SealedCSR for CSR_PMAADDR0 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR0 {}
@@ -1434,13 +1702,17 @@ pub struct CSR_PMAADDR1;
 impl self::common::SealedCSR for CSR_PMAADDR1 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR1 {}
@@ -1455,13 +1727,17 @@ pub struct CSR_PMAADDR2;
 impl self::common::SealedCSR for CSR_PMAADDR2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd2, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd2, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd2, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd2, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR2 {}
@@ -1476,13 +1752,17 @@ pub struct CSR_PMAADDR3;
 impl self::common::SealedCSR for CSR_PMAADDR3 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR3 {}
@@ -1497,13 +1777,17 @@ pub struct CSR_PMAADDR4;
 impl self::common::SealedCSR for CSR_PMAADDR4 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd4, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd4, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd4, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd4, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR4 {}
@@ -1518,13 +1802,17 @@ pub struct CSR_PMAADDR5;
 impl self::common::SealedCSR for CSR_PMAADDR5 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd5, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd5, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd5, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd5, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR5 {}
@@ -1539,13 +1827,17 @@ pub struct CSR_PMAADDR6;
 impl self::common::SealedCSR for CSR_PMAADDR6 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd6, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd6, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd6, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd6, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR6 {}
@@ -1560,13 +1852,17 @@ pub struct CSR_PMAADDR7;
 impl self::common::SealedCSR for CSR_PMAADDR7 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd7, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd7, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd7, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd7, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR7 {}
@@ -1581,13 +1877,17 @@ pub struct CSR_PMAADDR8;
 impl self::common::SealedCSR for CSR_PMAADDR8 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd8, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd8, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd8, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd8, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR8 {}
@@ -1602,13 +1902,17 @@ pub struct CSR_PMAADDR9;
 impl self::common::SealedCSR for CSR_PMAADDR9 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbd9, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbd9, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbd9, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbd9, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR9 {}
@@ -1623,13 +1927,17 @@ pub struct CSR_PMAADDR10;
 impl self::common::SealedCSR for CSR_PMAADDR10 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbda, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbda, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbda, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbda, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR10 {}
@@ -1644,13 +1952,17 @@ pub struct CSR_PMAADDR11;
 impl self::common::SealedCSR for CSR_PMAADDR11 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbdb, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbdb, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbdb, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbdb, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR11 {}
@@ -1665,13 +1977,17 @@ pub struct CSR_PMAADDR12;
 impl self::common::SealedCSR for CSR_PMAADDR12 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbdc, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbdc, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbdc, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbdc, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR12 {}
@@ -1686,13 +2002,17 @@ pub struct CSR_PMAADDR13;
 impl self::common::SealedCSR for CSR_PMAADDR13 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbdd, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbdd, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbdd, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbdd, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR13 {}
@@ -1707,13 +2027,17 @@ pub struct CSR_PMAADDR14;
 impl self::common::SealedCSR for CSR_PMAADDR14 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbde, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbde, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbde, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbde, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR14 {}
@@ -1728,13 +2052,17 @@ pub struct CSR_PMAADDR15;
 impl self::common::SealedCSR for CSR_PMAADDR15 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xbdf, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xbdf, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xbdf, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xbdf, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_PMAADDR15 {}
@@ -1749,13 +2077,17 @@ pub struct CSR_MICM_CFG;
 impl self::common::SealedCSR for CSR_MICM_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc0, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc0, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc0, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc0, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MICM_CFG {}
@@ -1770,13 +2102,17 @@ pub struct CSR_MDCM_CFG;
 impl self::common::SealedCSR for CSR_MDCM_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc1, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc1, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc1, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc1, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MDCM_CFG {}
@@ -1791,13 +2127,17 @@ pub struct CSR_MMSC_CFG;
 impl self::common::SealedCSR for CSR_MMSC_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc2, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc2, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc2, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc2, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MMSC_CFG {}
@@ -1812,13 +2152,17 @@ pub struct CSR_MMSC_CFG2;
 impl self::common::SealedCSR for CSR_MMSC_CFG2 {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc3, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc3, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc3, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc3, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MMSC_CFG2 {}
@@ -1833,20 +2177,24 @@ pub struct CSR_MVEC_CFG;
 impl self::common::SealedCSR for CSR_MVEC_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc7, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc7, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc7, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc7, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MVEC_CFG {}
 #[doc = "Current state save for crash debugging"]
 #[inline(always)]
-pub const fn mcrash_statesave(
-) -> self::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, self::common::R> {
+pub const fn mcrash_statesave()
+-> self::common::Reg<regs::McrashStatesave, CSR_MCRASH_STATESAVE, self::common::R> {
     unsafe { self::common::Reg::new() }
 }
 #[allow(non_camel_case_types)]
@@ -1855,13 +2203,17 @@ pub struct CSR_MCRASH_STATESAVE;
 impl self::common::SealedCSR for CSR_MCRASH_STATESAVE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc8, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc8, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc8, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc8, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCRASH_STATESAVE {}
@@ -1876,13 +2228,17 @@ pub struct CSR_MSTATUS_CRASHSAVE;
 impl self::common::SealedCSR for CSR_MSTATUS_CRASHSAVE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfc9, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfc9, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfc9, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfc9, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MSTATUS_CRASHSAVE {}
@@ -1898,13 +2254,17 @@ pub struct CSR_MRVARCH_CFG;
 impl self::common::SealedCSR for CSR_MRVARCH_CFG {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfca, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfca, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfca, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfca, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MRVARCH_CFG {}
@@ -1919,13 +2279,17 @@ pub struct CSR_MCCACHE_CTL_BASE;
 impl self::common::SealedCSR for CSR_MCCACHE_CTL_BASE {
     #[inline]
     unsafe fn read_csr() -> usize {
-        let r: usize;
-        core :: arch :: asm ! ("csrrs {0}, 0xfcf, x0" , out (reg) r);
-        r
+        unsafe {
+            let r: usize;
+            core :: arch :: asm ! ("csrrs {0}, 0xfcf, x0" , out (reg) r);
+            r
+        }
     }
     #[inline]
     unsafe fn write_csr(value: usize) {
-        core :: arch :: asm ! ("csrrw x0, 0xfcf, {0}" , in (reg) value);
+        unsafe {
+            core :: arch :: asm ! ("csrrw x0, 0xfcf, {0}" , in (reg) value);
+        }
     }
 }
 impl self::common::CSR for CSR_MCCACHE_CTL_BASE {}
@@ -1998,19 +2362,23 @@ pub mod common {
     impl<T: Default + Copy, C: CSR, A: Write> Reg<T, C, A> {
         #[inline(always)]
         pub unsafe fn write<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
-            let mut val = Default::default();
-            let res = f(&mut val);
-            self.write_value(val);
-            res
+            unsafe {
+                let mut val = Default::default();
+                let res = f(&mut val);
+                self.write_value(val);
+                res
+            }
         }
     }
     impl<T: Copy, C: CSR, A: Read + Write> Reg<T, C, A> {
         #[inline(always)]
         pub unsafe fn modify<R>(&self, f: impl FnOnce(&mut T) -> R) -> R {
-            let mut val = self.read();
-            let res = f(&mut val);
-            self.write_value(val);
-            res
+            unsafe {
+                let mut val = self.read();
+                let res = f(&mut val);
+                self.write_value(val);
+                res
+            }
         }
     }
 }
