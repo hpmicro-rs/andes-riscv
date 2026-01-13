@@ -1244,6 +1244,8 @@ fieldset/MCOUNTER_COMMON:
         start_index: 3 # TODO, support this
 fieldset/PMACFG:
   description: PMA Configuration Register
+  # Each entry is 8 bits: ETYP[1:0], MTYP[5:2], NAMO[6], Reserved[7]
+  # pmacfg0: Entry 0-3 in bits [7:0], [15:8], [23:16], [31:24]
   fields:
     - name: ETYP
       description: Entry address matching mode
@@ -1251,7 +1253,7 @@ fieldset/PMACFG:
       bit_size: 2
       array:
         len: 4
-        stride: 4
+        stride: 8
       enum: EntryType
     - name: MTYP
       description: Memory type attribute
@@ -1259,7 +1261,7 @@ fieldset/PMACFG:
       bit_size: 4
       array:
         len: 4
-        stride: 4
+        stride: 8
       enum: MemoryType
     - name: NAMO
       description: Indicate whether Atomic Memory Operation instructions (including LR/SC) are not supported in this region
@@ -1267,7 +1269,7 @@ fieldset/PMACFG:
       bit_size: 1
       array:
         len: 4
-        stride: 4
+        stride: 8
 fieldset/SLIE:
   description: Supervisor Local Interrupt Enable
   fields:

@@ -4622,7 +4622,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn etyp(&self, n: usize) -> super::vals::EntryType {
             assert!(n < 4usize);
-            let offs = 0usize + n * 4usize;
+            let offs = 0usize + n * 8usize;
             let val = (self.0 >> offs) & 0x03;
             super::vals::EntryType::from_bits(val as u8)
         }
@@ -4630,14 +4630,14 @@ pub mod regs {
         #[inline(always)]
         pub fn set_etyp(&mut self, n: usize, val: super::vals::EntryType) {
             assert!(n < 4usize);
-            let offs = 0usize + n * 4usize;
+            let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
         }
         #[doc = "Memory type attribute"]
         #[inline(always)]
         pub const fn mtyp(&self, n: usize) -> super::vals::MemoryType {
             assert!(n < 4usize);
-            let offs = 2usize + n * 4usize;
+            let offs = 2usize + n * 8usize;
             let val = (self.0 >> offs) & 0x0f;
             super::vals::MemoryType::from_bits(val as u8)
         }
@@ -4645,14 +4645,14 @@ pub mod regs {
         #[inline(always)]
         pub fn set_mtyp(&mut self, n: usize, val: super::vals::MemoryType) {
             assert!(n < 4usize);
-            let offs = 2usize + n * 4usize;
+            let offs = 2usize + n * 8usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val.to_bits() as u32) & 0x0f) << offs);
         }
         #[doc = "Indicate whether Atomic Memory Operation instructions (including LR/SC) are not supported in this region"]
         #[inline(always)]
         pub const fn namo(&self, n: usize) -> bool {
             assert!(n < 4usize);
-            let offs = 6usize + n * 4usize;
+            let offs = 6usize + n * 8usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -4660,7 +4660,7 @@ pub mod regs {
         #[inline(always)]
         pub fn set_namo(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
-            let offs = 6usize + n * 4usize;
+            let offs = 6usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
