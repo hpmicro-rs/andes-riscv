@@ -39,24 +39,21 @@ pub mod cctl_cmds {
 
 #[inline(always)]
 pub fn dc_is_enabled() -> bool {
-    register::mcache_ctl().read().dc_en()
+    register::mcache_ctl::read().dc_en()
 }
 
 #[inline(always)]
 pub fn ic_is_enabled() -> bool {
-    register::mcache_ctl().read().ic_en()
+    register::mcache_ctl::read().ic_en()
 }
 
 #[inline(always)]
 pub unsafe fn dc_enable() {
     unsafe {
         if !dc_is_enabled() {
-            register::mcache_ctl().modify(|w| w.set_dc_warnd(0b11));
-            register::mcache_ctl().modify(|w| {
-                // TODO: set dc_warnd
-                w.set_dpref_en(true);
-                w.set_dc_en(true);
-            });
+            register::mcache_ctl::set_dc_warnd(0b11);
+            register::mcache_ctl::set_dpref_en();
+            register::mcache_ctl::set_dc_en();
         }
     }
 }
@@ -65,7 +62,7 @@ pub unsafe fn dc_enable() {
 pub unsafe fn dc_disable() {
     unsafe {
         if dc_is_enabled() {
-            register::mcache_ctl().modify(|w| w.set_dc_en(false));
+            register::mcache_ctl::clear_dc_en();
         }
     }
 }
@@ -74,11 +71,9 @@ pub unsafe fn dc_disable() {
 pub unsafe fn ic_enable() {
     unsafe {
         if !ic_is_enabled() {
-            register::mcache_ctl().modify(|w| {
-                w.set_ic_en(true);
-                w.set_ipref_en(true);
-                w.set_cctl_suen(true);
-            });
+            register::mcache_ctl::set_ic_en();
+            register::mcache_ctl::set_ipref_en();
+            register::mcache_ctl::set_cctl_suen();
         }
     }
 }
@@ -87,7 +82,7 @@ pub unsafe fn ic_enable() {
 pub unsafe fn ic_disable() {
     unsafe {
         if ic_is_enabled() {
-            register::mcache_ctl().modify(|w| w.set_ic_en(false));
+            register::mcache_ctl::clear_ic_en();
         }
     }
 }
@@ -95,32 +90,32 @@ pub unsafe fn ic_disable() {
 #[inline(always)]
 pub unsafe fn dc_invalidate_all() {
     unsafe {
-        register::mcctlcommand().write_value(cctl_cmds::L1D_INVAL_ALL as u32);
+        register::mcctlcommand::write(cctl_cmds::L1D_INVAL_ALL as usize);
     }
 }
 
 #[inline(always)]
 pub unsafe fn dc_writeback_all() {
     unsafe {
-        register::mcctlcommand().write_value(cctl_cmds::L1D_WB_ALL as u32);
+        register::mcctlcommand::write(cctl_cmds::L1D_WB_ALL as usize);
     }
 }
 
 #[inline(always)]
 pub unsafe fn dc_flush_all() {
     unsafe {
-        register::mcctlcommand().write_value(cctl_cmds::L1D_WBINVAL_ALL as u32);
+        register::mcctlcommand::write(cctl_cmds::L1D_WBINVAL_ALL as usize);
     }
 }
 
 #[inline(always)]
 fn cctl_get_address() -> u32 {
-    register::mcctlbeginaddr().read()
+    register::mcctlbeginaddr::read() as u32
 }
 
 // HPM_L1C_CACHELINE_SIZE
 fn cacheline_size() -> u32 {
-    let dsz = register::mdcm_cfg().read().dsz();
+    let dsz = register::mdcm_cfg::read().dsz();
     match dsz {
         0 => 0,
         1 => 8,
@@ -139,14 +134,14 @@ pub unsafe fn l1c_op(opcode: u8, address: u32, size: u32) {
             riscv::register::mstatus::clear_mie();
         }
 
-        let ver = register::mmsc_cfg().read().vcctl();
+        let ver = register::mmsc_cfg::read().vcctl();
 
         if ver != 0 {
-            register::mcctlbeginaddr().write_value(address);
+            register::mcctlbeginaddr::write(address as usize);
             let mut next_address = address;
 
             while next_address < address + size && next_address >= address {
-                register::mcctlcommand().write_value(opcode as u32);
+                register::mcctlcommand::write(opcode as usize);
                 next_address = cctl_get_address();
             }
         } else {
@@ -156,8 +151,8 @@ pub unsafe fn l1c_op(opcode: u8, address: u32, size: u32) {
             }
             let mut i = 0;
             while i < size {
-                register::mcctlbeginaddr().write_value(address + i);
-                register::mcctlcommand().write_value(opcode as u32);
+                register::mcctlbeginaddr::write((address + i) as usize);
+                register::mcctlcommand::write(opcode as usize);
                 i += cl_size;
             }
         }
