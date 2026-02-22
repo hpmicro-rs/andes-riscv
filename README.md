@@ -2,9 +2,9 @@
 
 [![Crates.io](https://img.shields.io/crates/v/andes-riscv.svg)](https://crates.io/crates/andes-riscv)
 [![Documentation](https://docs.rs/andes-riscv/badge.svg)](https://docs.rs/andes-riscv)
-[![CI](https://github.com/embedded-drivers/andes-riscv/actions/workflows/ci.yml/badge.svg)](https://github.com/embedded-drivers/andes-riscv/actions/workflows/ci.yml)
+[![CI](https://github.com/hpmicro-rs/andes-riscv/actions/workflows/ci.yml/badge.svg)](https://github.com/hpmicro-rs/andes-riscv/actions/workflows/ci.yml)
 ![MSRV](https://img.shields.io/badge/rustc-nightly-red.svg)
-[![License](https://img.shields.io/crates/l/andes-riscv.svg)](https://github.com/embedded-drivers/andes-riscv#license)
+[![License](https://img.shields.io/crates/l/andes-riscv.svg)](https://github.com/hpmicro-rs/andes-riscv#license)
 
 The RISC-V architecture support crate for Andes' RISC-V cores.
 
