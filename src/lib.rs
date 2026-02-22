@@ -10,3 +10,5 @@ pub mod l1c;
 pub use riscv;
 
 pub mod plic;
+
+pub mod dsp;
